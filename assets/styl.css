@@ -1010,6 +1010,14 @@ h6, .nadtytul { font-size: 15px; letter-spacing: 2.5px; }
 .plan__data { font-size: 19px; }
 @media (max-width: 767px) { .kz__zdjecie { margin: -22px -20px 2px; } .kz__nazwa { font-size: 21px; } }
 
+/* pasek „Pierwszy raz w ART?” pod banerem */
+.zj-start { background: var(--mieta); padding: 18px 40px; }
+.zj-start__wnetrze { display: flex; align-items: center; justify-content: center; gap: 12px 28px; flex-wrap: wrap; text-align: center; }
+.zj-start p { margin: 0; color: var(--ciemny); }
+.zj-start .btn { padding: 10px 22px; }
+.plan__nazwa em.plan__dopisek { font-size: 11px; font-weight: 600; color: var(--szalwia); text-transform: lowercase; margin-left: 4px; }
+@media (max-width: 767px) { .zj-start { padding: 16px; } .zj-start p { font-size: 14px; } }
+
 /* Style stron: O nas, Instruktorzy, Cennik, Gabinet */
 
 /* odstępy sekcji (góra/dół) jak w oryginale */
