@@ -669,6 +669,11 @@ h6, .nadtytul { font-size: 15px; letter-spacing: 2.5px; }
   .cn-karta__cena { font-size: 24px; }
 }
 
+.cn-kontakt { margin-top: 18px; background: var(--mieta); border-radius: var(--radius); padding: 16px 18px; display: grid; gap: 6px; }
+.cn-kontakt__tytul { font-size: 12px !important; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--szalwia); margin: 0 !important; }
+.cn-kontakt a { font-weight: 600; color: var(--ciemny); font-size: 15px; }
+.cn-kontakt a:hover { color: var(--fiolet); }
+
 /* ---------- zdjęcia ---------- */
 .galeria__filtry { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 36px; }
 .galeria__siatka { columns: 3 280px; column-gap: 14px; }
