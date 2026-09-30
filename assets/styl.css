@@ -592,6 +592,73 @@ h6, .nadtytul { font-size: 15px; letter-spacing: 2.5px; }
   .wpis-baner h1 { font-size: 32px; }
 }
 
+/* ===== Mniejsza skala całej strony na komputerze i tablecie (30.09, Daria: „wciąż za duże”) ===== */
+@media (min-width: 768px) { html { zoom: .88; } }
+
+/* ---------- cennik ---------- */
+.cn-hero { min-height: 420px; }
+.cn-hero .hero__karta { max-width: 500px; }
+.cn-hero .hero__karta p { margin-bottom: 22px; }
+
+.cn-nav { position: sticky; top: 0; z-index: 20; background: var(--tlo); border-bottom: 1px solid rgba(20, 9, 30, .08); padding: 14px 40px; }
+.cn-nav .filtry { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.cn-nav .filtr { font-size: 13px; padding: 8px 14px; }
+.cn-nav .filtr:hover { background: var(--szalwia); border-color: var(--szalwia); color: var(--bialy); }
+
+.cn-sekcja { padding: 72px 40px; scroll-margin-top: 70px; }
+.cn-sekcja--jasna { background: var(--bialy); }
+.cn-sekcja--jasna .cn-karta { background: var(--tlo); }
+.cn-sekcja h2 { margin: 0 0 10px; }
+.cn-sekcja .nadtytul { margin-bottom: 8px; color: var(--szalwia); }
+.cn-sekcja .przyciski { margin-top: 30px; }
+
+.cn-start { display: flex; align-items: center; justify-content: space-between; gap: 30px; background: var(--mieta); border-radius: var(--radius); padding: 36px 40px; }
+.cn-start > div:first-child { max-width: 620px; }
+.cn-start p:last-child { margin: 0; }
+.cn-start .przyciski { margin: 0; flex-shrink: 0; }
+#pierwszy-raz { padding-bottom: 0; }
+
+.cn-naglowek { max-width: 640px; margin-bottom: 36px; }
+
+.cn-grupa { display: grid; grid-template-columns: 290px 1fr; gap: 40px; align-items: start; }
+.cn-grupa + .cn-grupa { margin-top: 28px; padding-top: 28px; border-top: 1px solid rgba(20, 9, 30, .08); }
+.cn-grupa__opis h3 { font-size: 22px; margin: 0 0 6px; }
+.cn-grupa__opis p { font-size: 14px; margin-bottom: 10px; }
+.cn-grupa__opis .btn { margin-top: 10px; }
+
+.cn-warunki summary { cursor: pointer; font-size: 13px; font-weight: 600; color: var(--fiolet); list-style: none; }
+.cn-warunki summary::-webkit-details-marker { display: none; }
+.cn-warunki summary::after { content: ' +'; }
+.cn-warunki[open] summary::after { content: ' −'; }
+.cn-warunki ul { margin: 10px 0 0; padding-left: 18px; font-size: 13px; line-height: 1.6; }
+.cn-warunki li + li { margin-top: 6px; }
+
+.cn-karty { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
+.cn-karta { position: relative; background: var(--bialy); border-radius: var(--radius); padding: 22px 22px 20px; border: 1px solid transparent; }
+.cn-karta--polecana { border-color: var(--fiolet); }
+.cn-karta__znak { position: absolute; top: -10px; left: 22px; background: var(--fiolet); color: var(--bialy); font-size: 11px; font-weight: 600; letter-spacing: .5px; padding: 2px 10px; border-radius: 50px; }
+.cn-karta h3 { font-size: 17px; line-height: 1.25; margin: 0 0 10px; }
+.cn-karta__cena { font: 600 28px/1.1 var(--font-naglowki); color: var(--ciemny); margin: 0; }
+.cn-karta__cena small { font: 500 14px var(--font-tekst); color: var(--tekst); }
+.cn-karta__opis { font-size: 13px; line-height: 1.5; margin: 10px 0 0; }
+
+.cn-znizka { margin: 32px 0 0; font-size: 14px; }
+
+@media (max-width: 900px) {
+  .cn-grupa { grid-template-columns: 1fr; gap: 18px; }
+  .cn-start { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 767px) {
+  .cn-nav { padding: 10px 16px; }
+  .cn-nav .filtry { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; scrollbar-width: none; }
+  .cn-nav .filtr { flex-shrink: 0; white-space: nowrap; }
+  .cn-sekcja { padding: 48px 16px; }
+  .cn-start { padding: 26px 20px; }
+  .cn-karty { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .cn-karta { padding: 18px 16px 16px; }
+  .cn-karta__cena { font-size: 24px; }
+}
+
 /* ART Sztuka Ruchu — style stron: kontakt, filmy, grafik zajęć, otwarcie, zapisz się,
    regulamin, polityka prywatności, aktualności, wydarzenia */
 
@@ -991,53 +1058,10 @@ h6, .nadtytul { font-size: 15px; letter-spacing: 2.5px; }
 .st-rozwijane--szerokie { margin: 40px 45px 0; }
 
 /* ---------- cennik (odstępy zmierzone z oryginału przy 1280px) ---------- */
-.st-hero-cennik h5 { margin: 0; }
 .st-hero-cennik .hero__karta .kreska, .st-hero-kreska .hero__karta .kreska { margin: 1px 0 20px; }
 .st-hero-kreska .hero__karta h4 { margin: 0; }
 .st-hero-kolumna .przyciski { margin-top: 16px; }
-.st-cennik { padding: 0 40px; }
-.st-cennik--pierwsza { padding-top: 120px; }
-.st-cennik h2 { font-size: 42px; line-height: 1.2; margin: 0 0 21px; }
-.st-cennik h4 { font-size: 24px; margin: 0; }
-.st-cennik--pierwsza h2 { margin-bottom: 40px; }
-.st-ceny { display: grid; grid-template-columns: repeat(auto-fill, 275px); gap: 20px; padding: 0 20px; margin-top: 40px; }
-.st-cennik--pierwsza .st-ceny { margin-top: 0; }
-.st-ceny--srodek { grid-template-columns: repeat(auto-fit, 275px); justify-content: center; }
-.st-cena { background: var(--bialy); border-radius: var(--radius); padding: 30px; display: flex; flex-direction: column; gap: 20px; }
-.st-cena--bez-tla { background: none; padding: 10px; width: 275px; }
-.st-cena h4, .st-cena h3 { margin: 0; }
-.st-cena h3 { font-size: 30px; }
-.st-cena p { margin: 0 0 14px; }
-.st-uwagi { margin-top: 41px; }
-.st-uwagi p { margin: 0 0 15px; }
-.st-uwagi p:last-child { margin-bottom: 0; }
-.st-cennik .st-uwagi + .przyciski { margin-top: 34px; }
-.st-cennik .przyciski { margin: 19px 0 0; }
-.st-cennik--w10 .st-uwagi, .st-cennik--w10 .przyciski { padding-left: 10px; }
-.st-cennik--w10 .st-uwagi { padding-right: 10px; }
-.st-cennik--w10 .st-uwagi { margin-top: 30px; }
-.st-cennik--w10 .przyciski { margin-top: 20px; }
-.st-cennik.st-cennik--pierwsza .przyciski { margin-top: 30px; }
-.st-cennik { padding-bottom: 80px; }
-.st-cennik--okazje { padding-bottom: 47px; }
-.st-cennik--okazje .przyciski { margin-top: 40px; }
-.st-cennik--pierwsza, .st-cennik--w10:not(.st-cennik--pierwsza) { padding-bottom: 80px; }
-.st-cennik:not(.st-cennik--okazje):not(.st-cennik--w10) { padding-bottom: 70px; }
 
-/* dolna część: pozycje bez kart, przy lewej krawędzi — tak jak w oryginale */
-.st-plasko { padding: 0; }
-.st-plasko h2 { margin: 0; }
-.st-plasko > h4 { font-size: 24px; margin: 0; }
-.st-plasko h6 { text-transform: none; letter-spacing: 0; color: var(--ciemny); margin: 0 0 28px; }
-.st-plasko > p { margin: 0 0 14px; }
-.st-poz { margin-bottom: 28px; display: flow-root; }
-.st-poz h4 { font-size: 24px; margin: 0; }
-.st-poz h3 { font-size: 30px; margin: 0; }
-.st-poz p { margin: 0 0 14px; }
-.st-plasko .btn { margin-bottom: 28px; }
-.st-plasko .st-plasko__odstep { margin-bottom: 27px; }
-.st-znizka { padding: 30px 160px 68px; text-align: center; }
-.st-znizka h3 { margin: 0; }
 
 /* ---------- gabinet ---------- */
 .st-hero-gab .hero__karta .kreska { margin: 0 0 20px; }
@@ -1124,17 +1148,6 @@ h2.st-wycentrowany { margin-bottom: 0; }
   .st-instruktor .st-rozwijane { margin-top: 30px; }
   .st-instruktor__zajecia h5 { font-size: 18px; }
   .st-rozwijane--szerokie { margin: 30px 0 0; }
-  .st-cennik, .st-cennik:not(.st-cennik--okazje):not(.st-cennik--w10) { padding: 0 16px 50px; }
-  .st-cennik--pierwsza { padding-top: 60px; }
-  .st-cennik h2 { font-size: 32px; }
-  .st-cennik h4, .st-plasko > h4, .st-poz h4 { font-size: 20px; }
-  .st-ceny, .st-ceny--srodek { grid-template-columns: 1fr; padding: 0; }
-  .st-cena--bez-tla { width: auto; }
-  .st-cena h3, .st-poz h3 { font-size: 26px; }
-  .st-cennik--w10 .st-uwagi, .st-cennik--w10 .przyciski { padding-left: 0; }
-  .st-plasko { padding: 0 16px; }
-  .st-znizka { padding: 20px 16px 50px; }
-  .st-znizka h3 { font-size: 22px; }
   .st-pomoc { grid-template-columns: 1fr 1fr; gap: 0 10px; }
   .st-pomoc__el { min-height: 0; padding: 8px 0; }
   .st-pomoc__el h4 { font-size: 19px; }
