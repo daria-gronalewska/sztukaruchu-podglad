@@ -54,6 +54,10 @@ if (katalog) {
     grupa.querySelectorAll('.filtr').forEach(x => x.classList.toggle('aktywny', !wylacz && x === b));
     odswiez();
   })));
+  // adres /zajecia/?obszar=cialo – od razu pokaż wybrany obszar (z menu)
+  const obszar = new URLSearchParams(location.search).get('obszar');
+  if (obszar) katalog.querySelector(`[data-klucz="${CSS.escape(obszar)}"]`)?.click();
+
   // klik w nazwę zajęć w planie tygodnia: pokaż kartę (nawet gdy była odfiltrowana) i ją podświetl
   document.querySelectorAll('[data-pokaz]').forEach(a => a.addEventListener('click', () => {
     const k = document.getElementById(a.dataset.pokaz);

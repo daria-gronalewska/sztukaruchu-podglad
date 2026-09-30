@@ -17,6 +17,8 @@ for root, dirs, files in os.walk(P):
     if 'index.php' in files and rel != '.': strony[rel + '/'] = rel.replace('/', '-')
 for w in json.load(open(P + '/dane/wpisy.json')):
     if not w.get('ukryty'): strony[w['slug'] + '/'] = w['slug']
+for z in json.load(open(P + '/dane/zajecia.json')):   # podstrony zajęć z jednego szablonu
+    a = z.get('adres', z['slug']); strony['zajecia/' + a + '/'] = 'zajecia-' + a
 
 pliki_css = ['styl.css'] + sorted(x for x in os.listdir(P + '/assets/css') if x.endswith('.css') and x != 'styl.css')
 css = ''.join(open(f'{P}/assets/css/{f}').read() + '\n' for f in pliki_css)
@@ -44,7 +46,8 @@ def popraw(h):
     h = re.sub(r'<link rel="canonical"[^>]*>', '', h)
     def link(m):
         path = m.group(2); base, _, frag = path.lstrip('/').partition('#')
-        if base in strony: return m.group(1) + strony[base] + '.html' + ('#' + frag if frag else '') + m.group(3)
+        base, _, zapyt = base.partition('?')
+        if base in strony: return m.group(1) + strony[base] + '.html' + ('?' + zapyt if zapyt else '') + ('#' + frag if frag else '') + m.group(3)
         return m.group(1) + 'https://sztukaruchu.art' + path + m.group(3)
     h = re.sub(r'(href=")(/[^"]*)(")', link, h)
     return h.replace('action="/kontakt/wyslij.php"', 'action="#"')
