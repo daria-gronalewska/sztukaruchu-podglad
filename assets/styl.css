@@ -546,6 +546,52 @@ h6, .nadtytul {
   .zespol-nawigacja .btn { margin-left: 0; }
 }
 
+/* ===== Lżejsza skala (30.09): mniejsze nagłówki, zdjęcia i banery ===== */
+h1 { font-size: 54px; }
+h2 { font-size: 34px; }
+h3 { font-size: 26px; }
+h4 { font-size: 21px; }
+h6, .nadtytul { font-size: 15px; letter-spacing: 2.5px; }
+.hero { min-height: 600px; padding-top: 140px; padding-bottom: 110px; }
+.hero__karta { max-width: 580px; padding: 34px; }
+.hero__karta h1 { font-size: 38px; }
+.hero--glowna { min-height: 780px; padding-top: 170px; }
+.hero--glowna .hero__karta h1 { font-size: 54px; }
+.sekcja { padding-top: 96px; padding-bottom: 96px; }
+.dzis__naglowek h2 { font-size: 30px; }
+.dzis__godz { font-size: 22px; }
+.dzis__nazwa { font-size: 16px; }
+.atut h4 { font-size: 20px; }
+.obszar h3 { font-size: 22px; }
+.obszar__ikona { width: 46px; height: 46px; }
+.zespol-pasek { grid-auto-columns: calc((100% - 96px) / 5); }
+.czlonek__profil h6 { font-size: 14px; }
+.czlonek p { font-size: 13px; }
+.gl-jak-u-siebie h2 { font-size: 36px; }
+.gl-jak-u-siebie p { font-size: 16px; }
+.cta-zapisy { padding-top: 110px; padding-bottom: 115px; }
+.cta-zapisy h2 { font-size: 34px; }
+.cta-zapisy h4 { font-size: 21px; }
+.dwie > :first-child { padding-right: 90px; }
+.dwie img.foto-waska { max-width: 360px; }
+.kw__tytul, .ka__tytul { font-size: 20px; }
+.wyr h2 { font-size: 36px; }
+.ka--duza .ka__tytul { font-size: 30px; }
+.wpis-baner h1 { font-size: 46px; }
+.faq summary { font-size: 16px; padding-top: 20px; padding-bottom: 20px; }
+@media (max-width: 1100px) { .zespol-pasek { grid-auto-columns: calc((100% - 48px) / 3); } }
+@media (max-width: 767px) {
+  h1 { font-size: 38px; } h2 { font-size: 28px; } h3 { font-size: 23px; }
+  .hero { min-height: 0; padding-top: 110px; padding-bottom: 60px; }
+  .hero__karta { padding: 26px 20px; }
+  .hero__karta h1, .hero--glowna .hero__karta h1 { font-size: 32px; }
+  .hero--glowna { min-height: 0; padding-top: 120px; }
+  .sekcja { padding-top: 64px; padding-bottom: 64px; }
+  .zespol-pasek { grid-auto-columns: 70%; }
+  .gl-jak-u-siebie h2 { font-size: 30px; }
+  .wpis-baner h1 { font-size: 32px; }
+}
+
 /* ART Sztuka Ruchu — style stron: kontakt, filmy, grafik zajęć, otwarcie, zapisz się,
    regulamin, polityka prywatności, aktualności, wydarzenia */
 
@@ -843,6 +889,14 @@ h6, .nadtytul {
 .kz__zdjecie img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
 .kz:hover .kz__zdjecie img { transform: scale(1.03); }
 @media (max-width: 767px) { .kz__zdjecie { margin: -22px -20px 4px; } }
+
+/* lżejsza skala */
+.kz { padding: 22px 22px 20px; gap: 12px; }
+.kz__zdjecie { margin: -22px -22px 2px; aspect-ratio: 16 / 9; }
+.kz__nazwa { font-size: 22px; }
+.kz__dla { font-size: 13.5px; }
+.plan__data { font-size: 19px; }
+@media (max-width: 767px) { .kz__zdjecie { margin: -22px -20px 2px; } .kz__nazwa { font-size: 21px; } }
 
 /* Style stron: O nas, Instruktorzy, Cennik, Gabinet */
 
@@ -1148,6 +1202,16 @@ h2.st-wycentrowany { margin-bottom: 0; }
   .profil__zdjecie img { aspect-ratio: 1; }
   .profil h2 { font-size: 32px; }
 }
+
+/* lżejsza skala profili */
+.profil { grid-template-columns: 300px minmax(0, 1fr); gap: 40px; padding: 30px; }
+.profil h2 { font-size: 32px; }
+.profil__zdanie { font-size: 18px; }
+.profil__zajecia li, .profil__termin { font-size: 14px; }
+.profil__bio { font-size: 14.5px; }
+.zespol-nav img { width: 46px; height: 46px; }
+@media (max-width: 1100px) { .profil { grid-template-columns: 240px minmax(0, 1fr); } }
+@media (max-width: 767px) { .profil { grid-template-columns: 1fr; padding: 20px; } .profil h2 { font-size: 28px; } }
 
 /* Wydarzenia i aktualności — listy, karty, strona wpisu */
 
