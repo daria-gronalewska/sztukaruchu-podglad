@@ -51,7 +51,9 @@ def popraw(h):
 
 bledy = []
 for adres, nazwa in strony.items():
-    html = urllib.request.urlopen(ADRES + adres).read().decode()
+    odp = urllib.request.urlopen(ADRES + adres)
+    if odp.geturl().rstrip('/') != (ADRES + adres).rstrip('/'): continue   # strona ukryta (przekierowanie)
+    html = odp.read().decode()
     if re.search(r'<b>(Fatal error|Warning|Parse error)</b>', html): bledy.append('/' + adres)
     open(f'{OUT}/{nazwa}.html', 'w').write(popraw(html))
 if bledy: print('UWAGA – błąd PHP na stronach:', ', '.join(bledy))
