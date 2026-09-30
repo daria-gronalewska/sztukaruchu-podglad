@@ -572,7 +572,7 @@ h6, .nadtytul { font-size: 15px; letter-spacing: 2.5px; }
 .cta-zapisy { padding-top: 110px; padding-bottom: 115px; }
 .cta-zapisy h2 { font-size: 34px; }
 .cta-zapisy h4 { font-size: 21px; }
-.dwie > :first-child { padding-right: 90px; }
+@media (min-width: 768px) { .dwie > :first-child { padding-right: 90px; } }
 .dwie img.foto-waska { max-width: 360px; }
 .kw__tytul, .ka__tytul { font-size: 20px; }
 .wyr h2 { font-size: 36px; }
