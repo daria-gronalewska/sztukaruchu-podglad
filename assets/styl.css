@@ -464,6 +464,44 @@ h6, .nadtytul {
   .naglowek__cta { width: auto; }
 }
 
+/* pasek „Dziś w ART” pod banerem strony głównej */
+.dzis { background: var(--ciemny); color: var(--krem); padding: 18px 40px; }
+.dzis__wnetrze { max-width: var(--szer); margin: 0 auto; display: flex; align-items: center; gap: 16px 28px; }
+.dzis__tytul { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.dzis h2 { color: var(--bialy); font-size: 22px; margin: 0; white-space: nowrap; }
+.dzis__kropka { width: 9px; height: 9px; border-radius: 50%; background: #8fd18a; box-shadow: 0 0 0 4px rgba(143, 209, 138, .2); }
+.dzis__lista { list-style: none; margin: 0; padding: 0 0 2px; display: flex; gap: 10px; overflow-x: auto; flex: 1; scrollbar-width: none; -webkit-mask-image: linear-gradient(90deg, #000 88%, transparent); mask-image: linear-gradient(90deg, #000 88%, transparent); }
+.dzis__lista::-webkit-scrollbar { display: none; }
+.dzis__zajecia { display: flex; align-items: baseline; gap: 8px; white-space: nowrap; background: rgba(255, 255, 255, .08); border-radius: 50px; padding: 8px 14px; color: var(--krem); font-size: 14px; transition: background .2s; }
+.dzis__zajecia:hover { background: rgba(255, 255, 255, .16); color: var(--bialy); }
+.dzis__godz { font-weight: 700; font-variant-numeric: tabular-nums; color: var(--bialy); }
+.dzis__miejsca { font-size: 11px; color: #a9d8a5; }
+.dzis__miejsca--brak { color: rgba(236, 229, 214, .55); }
+.dzis__wiecej { color: var(--lila); font-size: 14px; font-weight: 600; white-space: nowrap; }
+.dzis__wiecej:hover { color: var(--bialy); }
+
+/* stały pasek „Zapisz się” na telefonie */
+.pasek-mobilny { display: none; }
+@media (max-width: 767px) {
+  .dzis { padding: 16px; }
+  .dzis__wnetrze { flex-wrap: wrap; }
+  .dzis__lista { order: 3; flex-basis: 100%; }
+  .dzis__wiecej { margin-left: auto; }
+  .pasek-mobilny {
+    display: flex; gap: 10px; align-items: center;
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 90;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
+    background: rgba(246, 246, 240, .96); backdrop-filter: blur(8px);
+    box-shadow: 0 -6px 20px rgba(20, 9, 30, .12);
+    transition: transform .25s;
+  }
+  .pasek-mobilny__zapisz { flex: 1; padding: 14px 16px; }
+  .pasek-mobilny__grafik { padding: 12px 16px; border: 2px solid var(--szalwia); border-radius: 50px; color: var(--szalwia); font-weight: 500; }
+  .menu-otwarte .pasek-mobilny, .pasek-mobilny.ukryty { transform: translateY(110%); }
+  body { padding-bottom: 76px; }
+  .zgoda { bottom: 86px; }
+}
+
 /* ART Sztuka Ruchu — style stron: kontakt, filmy, grafik zajęć, otwarcie, zapisz się,
    regulamin, polityka prywatności, aktualności, wydarzenia */
 

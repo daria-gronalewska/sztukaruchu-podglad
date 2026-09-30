@@ -80,6 +80,13 @@ document.querySelectorAll('.pokaz-wiecej').forEach(lista => {
   });
 });
 
+// Pasek „Zapisz się” na telefonie chowa się przy samym dole strony (żeby nie zasłaniał stopki)
+const pasek = document.querySelector('.pasek-mobilny');
+if (pasek) {
+  const sprawdz = () => pasek.classList.toggle('ukryty', window.innerHeight + window.scrollY > document.body.scrollHeight - 140);
+  addEventListener('scroll', sprawdz, { passive: true }); sprawdz();
+}
+
 // Łagodne pojawianie się sekcji
 const pojaw = document.querySelectorAll('.pojaw');
 if ('IntersectionObserver' in window) {
