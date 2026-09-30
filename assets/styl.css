@@ -794,6 +794,12 @@ h6, .nadtytul {
   .pomoc__wnetrze { grid-template-columns: 1fr; gap: 30px; }
 }
 
+/* zdjęcie na górze karty zajęć */
+.kz__zdjecie { margin: -26px -26px 4px; border-radius: 14px 14px 0 0; overflow: hidden; aspect-ratio: 16 / 10; background: var(--krem); }
+.kz__zdjecie img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
+.kz:hover .kz__zdjecie img { transform: scale(1.03); }
+@media (max-width: 767px) { .kz__zdjecie { margin: -22px -20px 4px; } }
+
 /* Style stron: O nas, Instruktorzy, Cennik, Gabinet */
 
 /* odstępy sekcji (góra/dół) jak w oryginale */

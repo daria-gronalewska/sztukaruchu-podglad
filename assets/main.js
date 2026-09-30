@@ -42,7 +42,7 @@ if (katalog) {
     let ile = 0;
     katalog.querySelectorAll('.kz').forEach(k => {
       const ok = (!stan.kategoria || k.dataset.kategoria === stan.kategoria)
-        && (!stan.poziom || (stan.poziom === 'start' ? k.dataset.start === '1' : k.dataset.poziom === stan.poziom));
+        && (!stan.poziom || k.dataset.poziom === stan.poziom);
       k.hidden = !ok; if (ok) ile++;
     });
     katalog.querySelector('.katalog__pusto').hidden = ile > 0;
