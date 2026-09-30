@@ -411,13 +411,6 @@ h6, .nadtytul {
 .gl-wydarzenia { padding: 90px 40px 82px; }
 .gl-wydarzenia__siatka { margin-top: 70px; }
 .gl-wydarzenia .karta__img img { aspect-ratio: auto; }
-.gl-aktualnosci .dwie--tekst { grid-template-columns: 470fr 730fr; }
-.gl-aktualnosci .dwie--tekst > :first-child { padding-right: 80px; }
-.gl-aktualnosci .lista { grid-template-columns: 241px 1fr; gap: 20px; margin-bottom: 108px; }
-.gl-aktualnosci .kreska { margin-bottom: 44px; }
-.gl-aktualnosci .lista:last-of-type { margin-bottom: 27px; }
-.gl-aktualnosci .lista__img img { aspect-ratio: 241/135; border-radius: 0; }
-.gl-aktualnosci .lista__tytul { font-size: 18px; }
 .gl-opinie { padding: 90px 40px; }
 .gl-ebook { padding-bottom: 70px; }
 .gl-ebook .dwie > :first-child img { width: 100%; }
@@ -437,8 +430,6 @@ h6, .nadtytul {
   .gl-wydarzenia, .gl-opinie, .gl-faq { padding-left: 16px; padding-right: 16px; }
   .gl-wydarzenia { padding-top: 60px; padding-bottom: 60px; } .gl-wydarzenia__siatka { margin-top: 30px; }
   .gl-opinie, .gl-faq { padding-top: 60px; padding-bottom: 60px; }
-  .gl-aktualnosci .dwie--tekst > :first-child { padding-right: 0; }
-  .gl-aktualnosci .lista { grid-template-columns: 1fr; margin-bottom: 40px; }
   .dwie img.foto-waska { max-width: 100%; }
   .naglowek__cta { width: auto; }
 }
@@ -594,6 +585,24 @@ h6, .nadtytul { font-size: 15px; letter-spacing: 2.5px; }
 
 /* ===== Mniejsza skala całej strony na komputerze i tablecie (30.09, Daria: „wciąż za duże”) ===== */
 @media (min-width: 768px) { html { zoom: .88; } }
+
+/* ===== Menu zawsze w jednej linii na komputerze (30.09) ===== */
+@media (min-width: 1101px) {
+  .menu > ul { flex-wrap: nowrap; justify-content: center; }
+  .menu > ul > li > a { padding: 0 11px; font-size: 14px; white-space: nowrap; }
+  .menu > ul > li > a::after { left: 11px; right: 11px; }
+  .menu li.ma-pod > a { padding-right: 24px; }
+}
+@media (min-width: 1101px) and (max-width: 1350px) {
+  .menu > ul > li > a { padding: 0 8px; font-size: 13px; }
+  .menu > ul > li > a::after { left: 8px; right: 8px; }
+  .menu li.ma-pod > a { padding-right: 20px; }
+  .naglowek__logo img { width: 120px; }
+}
+.naglowek__cta { width: auto; padding: 10px 24px; white-space: nowrap; }
+
+/* Wydarzenia i aktualności na stronie głównej – te same karty co na podstronach */
+.gl-sekcja__opis { margin: 10px 0 0; max-width: 560px; }
 
 /* ---------- cennik ---------- */
 .cn-hero { min-height: 420px; }
