@@ -669,6 +669,32 @@ h6, .nadtytul { font-size: 15px; letter-spacing: 2.5px; }
   .cn-karta__cena { font-size: 24px; }
 }
 
+/* ---------- zdjęcia ---------- */
+.galeria__filtry { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 36px; }
+.galeria__siatka { columns: 3 280px; column-gap: 14px; }
+.galeria__el { display: block; margin-bottom: 14px; break-inside: avoid; border-radius: var(--radius); overflow: hidden; background: var(--krem); }
+.galeria__el[hidden] { display: none; }
+.galeria__el img { width: 100%; height: auto; transition: transform .4s; }
+.galeria__el:hover img { transform: scale(1.03); }
+
+.galeria__okno { position: fixed; inset: 0; z-index: 200; background: rgba(20, 9, 30, .92); display: flex; align-items: center; justify-content: center; padding: 50px 70px; }
+.galeria__okno[hidden] { display: none; }
+.galeria__okno img { max-width: 100%; max-height: 100%; width: auto; border-radius: 6px; }
+.galeria__zamknij, .galeria__strzalka { position: absolute; background: none; border: 0; color: var(--bialy); cursor: pointer; font: 300 44px/1 var(--font-tekst); padding: 10px 16px; opacity: .8; }
+.galeria__zamknij:hover, .galeria__strzalka:hover { opacity: 1; }
+.galeria__zamknij { top: 8px; right: 12px; }
+.galeria__strzalka--lewo { left: 8px; }
+.galeria__strzalka--prawo { right: 8px; }
+
+@media (max-width: 767px) {
+  .galeria .galeria__filtry { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; scrollbar-width: none; }
+  .galeria__filtry .filtr { flex-shrink: 0; white-space: nowrap; }
+  .galeria__siatka { columns: 2; column-gap: 8px; }
+  .galeria__el { margin-bottom: 8px; }
+  .galeria__okno { padding: 50px 10px; }
+  .galeria__strzalka { top: auto; bottom: 10px; }
+}
+
 /* ART Sztuka Ruchu — style stron: kontakt, filmy, grafik zajęć, otwarcie, zapisz się,
    regulamin, polityka prywatności, aktualności, wydarzenia */
 
