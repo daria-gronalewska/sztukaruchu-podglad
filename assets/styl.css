@@ -926,6 +926,10 @@ h6, .nadtytul { font-size: 15px; letter-spacing: 2.5px; }
 .plan__nazwa a:hover { color: var(--fiolet); }
 .plan__nazwa small { display: block; font-size: 12px; color: var(--tekst); font-weight: 400; }
 .plan__nazwa em { color: var(--terakota); font-style: normal; }
+.plan__zapisz { font-size: 11px; font-weight: 600; white-space: nowrap; background: var(--mieta); color: #4f6b4b; padding: 3px 9px; border-radius: 50px; }
+.plan__zapisz:hover { background: var(--szalwia); color: var(--bialy); }
+.plan__zapisz--malo { background: #f6e3d6; color: #9a5a38; }
+.plan__zapisz--brak { background: var(--krem); color: #8a8a8a; }
 .plan__miejsca { font-size: 11px; font-weight: 600; white-space: nowrap; background: var(--mieta); color: #4f6b4b; padding: 3px 8px; border-radius: 50px; }
 .plan__miejsca--malo { background: #f6e3d6; color: #9a5a38; }
 .plan__miejsca--brak { background: var(--krem); color: #8a8a8a; }
@@ -948,7 +952,7 @@ h6, .nadtytul { font-size: 15px; letter-spacing: 2.5px; }
   .filtry { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; scrollbar-width: none; }
   .filtry .filtr { flex-shrink: 0; }
   .plan__zajecia { grid-template-columns: 82px 1fr; }
-  .plan__miejsca { grid-column: 2; justify-self: start; }
+  .plan__miejsca, .plan__zapisz { grid-column: 2; justify-self: start; }
   .pomoc__wnetrze { grid-template-columns: 1fr; gap: 30px; }
 }
 
