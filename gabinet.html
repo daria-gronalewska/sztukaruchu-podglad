@@ -17,10 +17,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/styl.css?v=1790767245">
+<link rel="stylesheet" href="assets/styl.css?v=1790767556">
 </head>
 <body class="">
-<header class="naglowek naglowek--ciemny">
+<header class="naglowek">
   <div class="naglowek__wnetrze">
     <a class="naglowek__logo" href="index.html"><img src="media/2024/10/cropped-ART-logo-POZIOM-02-300x78.png" alt="ART SZTUKA RUCHU • Studio Fitness i Wellness" width="143" height="37"></a>
     <nav class="menu" id="menu" aria-label="Menu główne">
@@ -73,25 +73,7 @@
 </header>
 <main>
 
-<section class="gb-hero">
-  <div class="kontener gb-hero__wnetrze">
-    <div>
-      <p class="nadtytul">Gabinet w studiu ART · Borkowo</p>
-      <h1>Sesja Analizy i Strategii Zdrowia <span>+ Biorezonans</span></h1>
-      <p class="gb-hero__lead">Dowiedz się, skąd biorą się Twoje dolegliwości, i wyjdź z gabinetu z konkretnym planem działania. Bez igieł i bez czekania na wyniki.</p>
-      <div class="przyciski">
-        <a class="btn " href="https://artsztukaruchu-borkowo.cms.efitness.com.pl/kalendarz-zajec?room=5469" target="_blank" rel="noopener">Zarezerwuj termin</a>        <a class="btn btn--kontur" href="#cennik">Cennik</a>
-      </div>
-      <ul class="gb-liczby">
-        <li><b>10 lat</b>w obszarze zdrowia</li>
-        <li><b>1300+</b>wykonanych skanów</li>
-        <li><b>60 min</b>skan i rozmowa</li>
-      </ul>
-    </div>
-    <div class="gb-hero__foto"><img src="media/gabinet/mateusz-biorezonans.webp" alt="Mateusz Stuka podczas badania biorezonansem w gabinecie ART"></div>
-  </div>
-</section>
-
+<section class="hero hero--nizszy info-hero gb-hero" style="background-image:url('media/gabinet/mateusz-biorezonans-szeroko.webp')"><div class="hero__karta"><p class="nadtytul gb-hero__nad">Gabinet w studiu ART · Borkowo</p><h1>Sesja Analizy i Strategii Zdrowia + Biorezonans</h1><hr class="kreska"><p>Dowiedz się, skąd biorą się Twoje dolegliwości, i wyjdź z gabinetu z konkretnym planem działania. Bez igieł i bez czekania na wyniki.</p><ul class="gb-liczby"><li><b>10 lat</b>w obszarze zdrowia</li><li><b>1300+</b>wykonanych skanów</li><li><b>60 min</b>skan i rozmowa</li></ul><div class="przyciski"><a class="btn " href="https://artsztukaruchu-borkowo.cms.efitness.com.pl/kalendarz-zajec?room=5469" target="_blank" rel="noopener">Zarezerwuj termin</a><a class="btn btn--kontur" href="#cennik">Cennik</a></div></div></section>
 <section class="gb-pasek" aria-label="W skrócie">
   <ul class="kontener">
     <li>Bezbolesne badanie</li><li>Wynik od razu na ekranie</li><li>Plan na e-mail</li><li>Kilkanaście obszarów organizmu</li>
@@ -316,26 +298,20 @@
 <section class="sekcja gb-zapis" id="zapis">
   <div class="kontener gb-zapis__wnetrze">
     <div>
-      <h6 class="nadtytul">Zapisz się na sesję</h6><h2>Wybierz termin albo zostaw kontakt</h2>      <p>Wybierz termin w grafiku gabinetu albo zostaw swoje dane. Recepcja studia oddzwoni i pomoże dobrać dogodny termin.</p>
+      <h6 class="nadtytul">Zapisz się na sesję</h6><h2>Umów wizytę</h2>      <p>Recepcja studia pomoże dobrać dogodny termin.</p>
       <ul class="gb-kontakt">
         <li><span>Recepcja</span><a href="tel:+48797976960">+48 797 976 960</a></li>
         <li><span>E-mail</span><a href="mailto:recepcja@sztukaruchu.art">recepcja@sztukaruchu.art</a></li>
         <li><span>Adres</span>ul. Nasza 19, 80-180 Borkowo</li>
       </ul>
     </div>
-    <div class="st-formularz gb-formularz">
-            <form method="post" action="#">
-        <input type="hidden" name="temat" value="Gabinet – zapis na sesję">
-        <input type="hidden" name="powrot" value="/gabinet/#zapis">
-        <label>Imię <span>*</span><input type="text" name="imie" required></label>
-        <label>Adres e-mail <span>*</span><input type="email" name="email" required></label>
-        <label>Numer telefonu<input type="tel" name="telefon"></label>
-        <label>Z czym przychodzisz na sesję? <span>*</span><textarea name="wiadomosc" rows="4" required></textarea></label>
-        <label class="st-pulapka" aria-hidden="true">Nie wypełniaj tego pola<input type="text" name="strona" tabindex="-1" autocomplete="off"></label>
-        <label class="st-zgoda"><input type="checkbox" name="zgoda" value="tak" required> Podając swoje dane w formularzu, zgadzasz się na ich przetwarzanie przez Energy Forma Daria Gronalewska – Studio ART Sztuka Ruchu w celu kontaktu zwrotnego.</label>
-        <button class="btn" type="submit">Wyślij wiadomość</button>
-      </form>
-          </div>
+    <div class="gb-karta gb-zapis__karta">
+      <h3>Najprościej: wybierz termin w grafiku</h3>
+      <p>Sesje w gabinecie rezerwujesz w grafiku e-fitness, tak jak zajęcia. Jeśli wolisz porozmawiać albo umówić przyjazd lub sesję online, zadzwoń do recepcji.</p>
+      <div class="przyciski">
+        <a class="btn " href="https://artsztukaruchu-borkowo.cms.efitness.com.pl/kalendarz-zajec?room=5469" target="_blank" rel="noopener">Grafik gabinetu</a>        <a class="btn btn--kontur" href="tel:+48797976960">Zadzwoń</a>
+      </div>
+    </div>
   </div>
   <p class="kontener gb-zastrzezenie">Biorezonans jest metodą wspierającą ocenę stanu odżywienia organizmu w podejściu naturopatycznym. Nie jest badaniem diagnostycznym w rozumieniu medycyny konwencjonalnej i nie zastępuje konsultacji lekarskiej ani badań laboratoryjnych.</p>
 </section>
@@ -385,6 +361,6 @@
 
 
 
-<script src="assets/main.js?v=1790767245" defer></script>
+<script src="assets/main.js?v=1790767556" defer></script>
 <div class="podglad-pasek">Podgląd nowej strony ART Sztuka Ruchu — formularze zadziałają po publikacji</div></body>
 </html>
