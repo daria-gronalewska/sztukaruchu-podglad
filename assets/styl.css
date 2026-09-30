@@ -674,6 +674,145 @@ h6, .nadtytul { font-size: 15px; letter-spacing: 2.5px; }
 .cn-kontakt a { font-weight: 600; color: var(--ciemny); font-size: 15px; }
 .cn-kontakt a:hover { color: var(--fiolet); }
 
+/* ---------- gabinet (sesja z biorezonansem) ---------- */
+.gb-hero { background: var(--krem); padding: 150px 40px 70px; }
+.gb-hero__wnetrze { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; }
+.gb-hero .nadtytul { color: var(--szalwia); margin-bottom: 12px; }
+.gb-hero h1 { font-size: 52px; line-height: 1.05; margin: 0 0 18px; }
+.gb-hero h1 span { color: var(--fiolet); display: block; }
+.gb-hero__lead { font-size: 17px; line-height: 1.65; color: var(--ciemny); max-width: 540px; }
+.gb-hero .przyciski { margin: 26px 0 34px; }
+.gb-liczby { list-style: none; padding: 0; margin: 0; display: flex; gap: 36px; flex-wrap: wrap; }
+.gb-liczby li { font-size: 13px; line-height: 1.4; color: var(--tekst); }
+.gb-liczby b { display: block; font: 600 32px/1.1 var(--font-naglowki); color: var(--ciemny); }
+.gb-hero__foto img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 30%; border-radius: 16px; box-shadow: 0 20px 50px rgba(20, 9, 30, .12); }
+
+.gb-pasek { background: var(--ciemny); padding: 16px 40px; }
+.gb-pasek ul { list-style: none; margin: 0 auto; padding: 0; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 10px 30px; }
+.gb-pasek li { color: var(--krem); font-size: 14px; font-weight: 500; display: flex; align-items: center; gap: 8px; }
+.gb-pasek li::before { content: '✓'; color: var(--lila); font-weight: 700; }
+
+.gb-naglowek { max-width: 720px; margin: 0 auto 36px; }
+.gb-naglowek h2 { margin: 0; }
+.gb-naglowek--rzad { max-width: none; display: flex; justify-content: space-between; align-items: flex-end; gap: 20px 40px; flex-wrap: wrap; }
+.gb-naglowek--rzad > p { max-width: 420px; margin: 0; }
+
+.gb-karty { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+.gb-karty--4 { grid-template-columns: repeat(3, 1fr); }
+.gb-karty li { background: var(--bialy); border-radius: 12px; padding: 20px 22px 20px 54px; position: relative; color: var(--ciemny); line-height: 1.55; }
+.gb-karty li::before { content: '?'; position: absolute; left: 18px; top: 20px; width: 24px; height: 24px; border-radius: 50%; background: var(--lila); color: var(--bialy); font-weight: 700; font-size: 13px; display: grid; place-items: center; }
+.gb-puenta { text-align: center; margin: 30px auto 0; font-size: 17px; color: var(--ciemny); }
+.gb-puenta b { color: var(--fiolet); }
+
+.gb-kto__wnetrze { display: grid; grid-template-columns: 420px 1fr; gap: 60px; align-items: center; }
+.gb-kto__foto { position: relative; }
+.gb-kto__foto img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 16px; }
+.gb-odznaka { position: absolute; right: -20px; bottom: 30px; background: var(--bialy); border-radius: 14px; padding: 14px 18px; box-shadow: 0 12px 30px rgba(20, 9, 30, .12); font-size: 12px; line-height: 1.35; color: var(--tekst); max-width: 150px; }
+.gb-odznaka b { display: block; font: 600 30px/1 var(--font-naglowki); color: var(--fiolet); margin-bottom: 4px; }
+.gb-rola { margin: -4px 0 18px; font-size: 15px; color: var(--szalwia); font-weight: 600; }
+.gb-cv { margin: 26px 0 0; display: grid; gap: 0; border-top: 1px solid rgba(20, 9, 30, .1); }
+.gb-cv div { display: grid; grid-template-columns: 190px 1fr; gap: 16px; padding: 12px 0; border-bottom: 1px solid rgba(20, 9, 30, .1); }
+.gb-cv dt { font-weight: 700; color: var(--ciemny); }
+.gb-cv dd { margin: 0; }
+
+.gb-kolumny { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.gb-karta { background: var(--bialy); border-radius: 14px; padding: 26px 26px 24px; }
+.gb-karta h3 { font-size: 21px; margin: 0 0 8px; }
+.gb-karta p { margin: 0; font-size: 15px; line-height: 1.65; }
+.gb-zysk .gb-karta { background: var(--tlo); border: 1px solid rgba(20, 9, 30, .06); }
+.gb-ikona { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 12px; background: var(--mieta); color: #4f6b4b; font-size: 22px; margin-bottom: 16px; }
+.gb-nr { display: block; font: 600 46px/1 var(--font-naglowki); color: var(--lila); margin-bottom: 10px; }
+
+.gb-skan__wnetrze { display: grid; grid-template-columns: 1fr 440px; gap: 60px; align-items: start; }
+.gb-chipy { list-style: none; padding: 0; margin: 10px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.gb-chipy li { background: var(--mieta); color: #3f5a3c; border-radius: 50px; padding: 8px 16px; font-size: 14px; font-weight: 600; }
+.gb-maly { font-size: 13px; color: #8a8a8a; margin: 14px 0 0; }
+.gb-porownanie { background: var(--bialy); border-radius: 16px; padding: 28px; box-shadow: 0 12px 30px rgba(20, 9, 30, .06); }
+.gb-porownanie h3 { font-size: 20px; margin: 0 0 14px; }
+.gb-porownanie dl { margin: 0; }
+.gb-porownanie dl div { display: flex; justify-content: space-between; gap: 16px; padding: 8px 0; border-bottom: 1px dashed rgba(20, 9, 30, .12); font-size: 14px; }
+.gb-porownanie dd { margin: 0; font-weight: 600; color: var(--ciemny); }
+.gb-porownanie__suma { border-bottom: 0 !important; font-weight: 700; color: var(--ciemny); }
+.gb-porownanie__art { margin-top: 12px; background: var(--ciemny); color: var(--krem); border-radius: 12px; padding: 16px 18px; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 13px; line-height: 1.5; }
+.gb-porownanie__art b { font: 600 30px/1 var(--font-naglowki); color: var(--bialy); white-space: nowrap; }
+
+.gb-oferta { position: relative; background: var(--bialy); border-radius: 16px; padding: 30px 26px 24px; display: flex; flex-direction: column; border: 1px solid transparent; }
+.gb-oferta--wyrozniona { border-color: var(--fiolet); box-shadow: 0 16px 40px rgba(165, 138, 231, .2); }
+.gb-oferta__znak { position: absolute; top: -12px; left: 24px; background: var(--fiolet); color: var(--bialy); font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 4px 12px; border-radius: 50px; }
+.gb-oferta__znak--jasny { background: var(--mieta); color: #4f6b4b; }
+.gb-oferta h3 { font-size: 24px; margin: 0 0 6px; }
+.gb-oferta__opis { font-size: 14px; margin: 0 0 16px; }
+.gb-oferta__cena { font: 600 40px/1 var(--font-naglowki); color: var(--ciemny); margin: 0 0 16px; }
+.gb-oferta__cena small { display: block; font: 500 13px/1.4 var(--font-tekst); color: var(--szalwia); margin-top: 6px; }
+.gb-oferta ul { list-style: none; padding: 0; margin: 0 0 22px; display: grid; gap: 8px; font-size: 14px; flex: 1; }
+.gb-oferta li { padding-left: 24px; position: relative; }
+.gb-oferta li::before { content: '✓'; position: absolute; left: 0; color: var(--szalwia); font-weight: 700; }
+.gb-oferta .btn { align-self: flex-start; }
+.gb-program { max-width: 760px; margin: 34px auto 0; text-align: center; background: var(--bialy); border-radius: 12px; padding: 18px 24px; font-size: 15px; }
+
+.gb-ocena { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.gb-ocena b { font: 600 34px/1 var(--font-naglowki); color: var(--ciemny); }
+.gb-ocena span, .gb-gwiazdki { color: #e8b04b; letter-spacing: 2px; }
+.gb-ocena small { width: 100%; font-size: 12px; color: #8a8a8a; }
+.gb-opinie__siatka { columns: 3 280px; column-gap: 16px; }
+.gb-opinia { break-inside: avoid; margin: 0 0 16px; background: var(--bialy); border-radius: 14px; padding: 22px; border: 1px solid rgba(20, 9, 30, .06); }
+.gb-opinia blockquote { margin: 10px 0 16px; font-size: 15px; line-height: 1.65; color: var(--ciemny); }
+.gb-opinia figcaption { display: flex; align-items: center; gap: 10px; font-weight: 600; color: var(--ciemny); font-size: 14px; flex-wrap: wrap; }
+.gb-opinia figcaption small { width: 100%; margin-left: 46px; margin-top: -8px; font-weight: 400; font-size: 12px; color: #8a8a8a; }
+.gb-inicjaly { width: 36px; height: 36px; border-radius: 50%; background: var(--lila); color: var(--bialy); display: grid; place-items: center; font-size: 13px; font-weight: 700; }
+
+.gb-faq__wnetrze { display: grid; grid-template-columns: 1fr 1.4fr; gap: 50px; align-items: start; }
+.gb-faq .zj-rozwin:first-child { margin-top: 0; }
+
+.gb-inne__siatka { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.gb-inne .gb-karta { background: var(--tlo); border: 1px solid rgba(20, 9, 30, .06); }
+.gb-inne__cena { font: 600 24px/1 var(--font-naglowki) !important; color: var(--fiolet); margin: 0 0 10px !important; }
+.gb-inne .przyciski { margin-top: 30px; }
+
+.gb-cta { padding: 0 40px; }
+.gb-cta__wnetrze { background: var(--ciemny); border-radius: 20px; overflow: hidden; display: grid; grid-template-columns: 1.4fr 1fr; align-items: stretch; }
+.gb-cta__wnetrze > div { padding: 50px 48px; }
+.gb-cta .nadtytul { color: var(--lila); }
+.gb-cta h2 { color: var(--bialy); margin: 8px 0 14px; }
+.gb-cta p { color: var(--krem); }
+.gb-cta .przyciski { margin-top: 24px; }
+.gb-cta img { width: 100%; height: 100%; object-fit: cover; }
+
+.gb-zapis__wnetrze { display: grid; grid-template-columns: 1fr 1.1fr; gap: 50px; align-items: start; }
+.gb-kontakt { list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 10px; }
+.gb-kontakt li { display: grid; grid-template-columns: 90px 1fr; gap: 12px; font-size: 15px; color: var(--ciemny); }
+.gb-kontakt span { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--szalwia); padding-top: 4px; }
+.gb-formularz { background: var(--bialy); border-radius: 16px; padding: 28px; }
+.gb-zastrzezenie { margin-top: 50px !important; font-size: 12px; line-height: 1.6; color: #8a8a8a; text-align: center; max-width: 820px !important; }
+
+@media (max-width: 1100px) {
+  .gb-karty--4 { grid-template-columns: repeat(2, 1fr); }
+  .gb-inne__siatka { grid-template-columns: repeat(2, 1fr); }
+  .gb-kto__wnetrze { grid-template-columns: 340px 1fr; gap: 40px; }
+  .gb-skan__wnetrze { grid-template-columns: 1fr; }
+}
+@media (max-width: 900px) {
+  .gb-hero__wnetrze, .gb-kto__wnetrze, .gb-faq__wnetrze, .gb-zapis__wnetrze, .gb-cta__wnetrze { grid-template-columns: 1fr; gap: 30px; }
+  .gb-kolumny { grid-template-columns: 1fr; }
+  .gb-cta img { max-height: 280px; }
+  .gb-odznaka { right: 12px; }
+}
+@media (max-width: 767px) {
+  .gb-hero { padding: 110px 16px 40px; }
+  .gb-hero h1 { font-size: 36px; }
+  .gb-liczby { gap: 22px; }
+  .gb-liczby b { font-size: 26px; }
+  .gb-pasek { padding: 14px 16px; }
+  .gb-pasek ul { justify-content: flex-start; }
+  .gb-pasek li { font-size: 13px; }
+  .gb-karty--4, .gb-inne__siatka { grid-template-columns: 1fr; }
+  .gb-cv div { grid-template-columns: 1fr; gap: 2px; }
+  .gb-cta { padding: 0 16px; }
+  .gb-cta__wnetrze > div { padding: 32px 22px; }
+  .gb-formularz, .gb-porownanie { padding: 22px 18px; }
+}
+@media (max-width: 900px) { .gb-hero__foto img { aspect-ratio: 4 / 3; } .gb-kto__foto img { aspect-ratio: 1 / 1; } }
+
 /* ---------- zdjęcia ---------- */
 .galeria__filtry { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 36px; }
 .galeria__siatka { columns: 3 280px; column-gap: 14px; }
