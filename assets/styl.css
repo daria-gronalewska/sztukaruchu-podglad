@@ -612,10 +612,10 @@ h6, .nadtytul { font-size: 15px; letter-spacing: 2.5px; }
 .cn-sekcja .nadtytul { margin-bottom: 8px; color: var(--szalwia); }
 .cn-sekcja .przyciski { margin-top: 30px; }
 
-.cn-start { display: flex; align-items: center; justify-content: space-between; gap: 30px; background: var(--mieta); border-radius: var(--radius); padding: 36px 40px; }
-.cn-start > div:first-child { max-width: 620px; }
-.cn-start p:last-child { margin: 0; }
-.cn-start .przyciski { margin: 0; flex-shrink: 0; }
+.cn-start { display: grid; grid-template-columns: 1fr 1.3fr; gap: 40px; align-items: center; background: var(--mieta); border-radius: var(--radius); padding: 36px 40px; }
+.cn-start .cn-grupa__opis p { font-size: 15px; }
+.cn-start .cn-grupa__opis p:last-child { margin: 0; }
+.cn-start .przyciski { margin-top: 20px; }
 #pierwszy-raz { padding-bottom: 0; }
 
 .cn-naglowek { max-width: 640px; margin-bottom: 36px; }
@@ -646,7 +646,7 @@ h6, .nadtytul { font-size: 15px; letter-spacing: 2.5px; }
 
 @media (max-width: 900px) {
   .cn-grupa { grid-template-columns: 1fr; gap: 18px; }
-  .cn-start { flex-direction: column; align-items: flex-start; }
+  .cn-start { grid-template-columns: 1fr; gap: 24px; }
 }
 @media (max-width: 767px) {
   .cn-nav { padding: 10px 16px; }
@@ -655,6 +655,7 @@ h6, .nadtytul { font-size: 15px; letter-spacing: 2.5px; }
   .cn-sekcja { padding: 48px 16px; }
   .cn-start { padding: 26px 20px; }
   .cn-karty { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .cn-start .cn-karty { grid-template-columns: 1fr; }
   .cn-karta { padding: 18px 16px 16px; }
   .cn-karta__cena { font-size: 24px; }
 }
