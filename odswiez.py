@@ -1,6 +1,7 @@
 # Odświeża statyczny podgląd na podstawie lokalnej strony (php -S localhost:8090).
 # Użycie: python3 odswiez.py  → potem wysłać zmiany na GitHub (strona publikuje się sama).
-import re, os, shutil, urllib.request, json
+import re, os, shutil, urllib.request, json, time
+WERSJA = str(int(time.time()))  # numer wersji — przeglądarka nie użyje starych stylów z pamięci
 P = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'sztukaruchu-art')
 OUT = os.path.dirname(os.path.abspath(__file__))
 ADRES = os.environ.get('ADRES', 'http://localhost:8090/')
@@ -31,10 +32,10 @@ open(OUT + '/assets/main.js', 'w').write(js)
 PASEK = '<div class="podglad-pasek">Podgląd nowej strony ART Sztuka Ruchu — formularze zadziałają po publikacji</div>'
 
 def popraw(h):
-    h = re.sub(r'(<link rel="stylesheet" href="/assets/css/[^"]+">\n?)+', '<link rel="stylesheet" href="assets/styl.css">\n', h, count=1)
+    h = re.sub(r'(<link rel="stylesheet" href="/assets/css/[^"]+">\n?)+', '<link rel="stylesheet" href="assets/styl.css?v=' + WERSJA + '">\n', h, count=1)
     h = re.sub(r'<link rel="stylesheet" href="/assets/css/[^"]+">\n?', '', h)
     h = re.sub(r'<script>window.PIKSEL_META.*?</script>', '', h)
-    h = re.sub(r'<script src="/assets/js/main.js[^"]*" defer></script>', '<script src="assets/main.js" defer></script>', h)
+    h = re.sub(r'<script src="/assets/js/main.js[^"]*" defer></script>', '<script src="assets/main.js?v=' + WERSJA + '" defer></script>', h)
     h = re.sub(r'<div class="zgoda" id="zgoda".*?</div>\s*</div>', '', h, flags=re.S)
     h = h.replace('<meta charset="UTF-8">', '<meta charset="UTF-8">\n<meta name="robots" content="noindex, nofollow">')
     h = h.replace('</body>', PASEK + '</body>')
