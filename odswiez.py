@@ -1,9 +1,9 @@
 # Odświeża statyczny podgląd na podstawie lokalnej strony (php -S localhost:8090).
 # Użycie: python3 odswiez.py  → potem wysłać zmiany na GitHub (strona publikuje się sama).
 import re, os, shutil, urllib.request, json
-P = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'sztukaruchu-strona')
+P = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'sztukaruchu-art')
 OUT = os.path.dirname(os.path.abspath(__file__))
-ADRES = 'http://localhost:8090/'
+ADRES = os.environ.get('ADRES', 'http://localhost:8090/')
 
 for f in os.listdir(OUT):
     if f.endswith('.html'): os.remove(os.path.join(OUT, f))
