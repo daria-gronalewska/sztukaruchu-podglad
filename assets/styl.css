@@ -674,6 +674,14 @@ h6, .nadtytul { font-size: 15px; letter-spacing: 2.5px; }
 .cn-kontakt a { font-weight: 600; color: var(--ciemny); font-size: 15px; }
 .cn-kontakt a:hover { color: var(--fiolet); }
 
+.cn-jak { padding: 40px 40px 0; }
+.cn-jak .kontener { background: var(--bialy); border-radius: var(--radius); padding: 26px 30px; border: 1px dashed var(--jasna-szalwia); }
+.cn-jak h3 { font-size: 20px; margin: 0 0 12px; }
+.cn-jak ol { margin: 0 0 12px; padding-left: 20px; display: grid; gap: 6px; font-size: 14px; }
+.cn-jak b { color: var(--ciemny); }
+.cn-jak p { margin: 0; font-size: 13px; }
+@media (max-width: 767px) { .cn-jak { padding: 30px 16px 0; } .cn-jak .kontener { padding: 20px 18px; } }
+
 /* ---------- gabinet (sesja z biorezonansem) ---------- */
 .gb-hero { background-position: 70% center; }
 .gb-hero .hero__karta { max-width: 600px; }
@@ -816,6 +824,39 @@ h6, .nadtytul { font-size: 15px; letter-spacing: 2.5px; }
 @media (min-width: 901px) {
   .gb-hero { background-position: 25% 15%; }
   .gb-hero .hero__karta { margin-left: auto; margin-right: max(0px, calc((100% - var(--szer)) / 2)); }
+}
+
+/* porównanie: badania z krwi vs skan */
+.gb-vs { display: grid; grid-template-columns: 1fr 56px 1.35fr; align-items: stretch; gap: 0; margin-top: 10px; }
+.gb-vs__kol { border-radius: 18px; padding: 30px 30px 28px; }
+.gb-vs__kol--krew { background: var(--bialy); border: 1px solid rgba(20, 9, 30, .08); align-self: center; }
+.gb-vs__kol--art { background: var(--ciemny); color: var(--krem); box-shadow: 0 24px 50px rgba(20, 9, 30, .18); }
+.gb-vs__etykieta { font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--szalwia); margin: 0 0 10px; }
+.gb-vs__kol--art .gb-vs__etykieta { color: var(--lila); }
+.gb-vs__liczba { font: 600 64px/1 var(--font-naglowki); color: var(--ciemny); margin: 0; }
+.gb-vs__kol--art .gb-vs__liczba { color: var(--bialy); font-size: 84px; }
+.gb-vs__liczba small, .gb-vs__cena small { font: 500 14px/1.4 var(--font-tekst); color: inherit; opacity: .75; margin-left: 6px; }
+.gb-vs__cena { font: 600 28px/1.2 var(--font-naglowki); color: var(--ciemny); margin: 8px 0 16px; }
+.gb-vs__kol--art .gb-vs__cena { color: var(--lila); }
+.gb-vs__cena small { display: block; margin: 2px 0 0; }
+.gb-vs__pasek { height: 10px; border-radius: 10px; background: rgba(20, 9, 30, .08); margin-bottom: 20px; overflow: hidden; }
+.gb-vs__kol--art .gb-vs__pasek { background: rgba(255, 255, 255, .12); }
+.gb-vs__pasek span { display: block; height: 100%; border-radius: 10px; background: var(--jasna-szalwia); }
+.gb-vs__kol--art .gb-vs__pasek span { background: linear-gradient(90deg, var(--lila), var(--fiolet)); }
+.gb-vs__lista { list-style: none; padding: 0; margin: 0; font-size: 14px; }
+.gb-vs__lista li { display: flex; justify-content: space-between; gap: 10px; padding: 7px 0; border-bottom: 1px dashed rgba(20, 9, 30, .12); }
+.gb-vs__lista em { font-style: normal; font-weight: 600; color: var(--ciemny); }
+.gb-vs__dopisek { font-size: 13px; color: #8a8a8a; margin: 12px 0 0; }
+.gb-vs__srodek { display: grid; place-items: center; font: 600 22px/1 var(--font-naglowki); color: var(--fiolet); text-transform: uppercase; }
+.gb-vs__chipy { list-style: none; padding: 0; margin: 0 0 20px; display: flex; flex-wrap: wrap; gap: 6px; }
+.gb-vs__chipy li { background: rgba(255, 255, 255, .1); color: var(--bialy); border-radius: 50px; padding: 6px 12px; font-size: 13px; font-weight: 500; }
+.gb-vs__plus { list-style: none; padding: 0; margin: 0 0 22px; display: grid; gap: 6px; font-size: 14px; }
+.gb-vs__plus li::before { content: '✓  '; color: var(--lila); font-weight: 700; }
+.gb-skan .gb-maly { max-width: 720px; margin: 20px auto 0; }
+@media (max-width: 900px) {
+  .gb-vs { grid-template-columns: 1fr; }
+  .gb-vs__srodek { padding: 12px 0; }
+  .gb-vs__kol--art .gb-vs__liczba { font-size: 64px; }
 }
 
 /* ---------- zdjęcia ---------- */
@@ -1605,6 +1646,8 @@ h2.st-wycentrowany { margin-bottom: 0; }
   .wpis-sekcja { padding-top: 40px; }
   .ramka-szczegoly { padding: 26px 22px; }
 }
+.ramka-szczegoly__kroki { margin: 0 0 4px; padding-left: 20px; font-size: 13px; line-height: 1.55; display: grid; gap: 6px; }
+.ramka-szczegoly__kroki b { color: var(--ciemny); }
 
 /* Zajęcia: /zajecia/ oraz podstrony BODYART +, Wzmacnianie i Spalanie, Barre */
 
