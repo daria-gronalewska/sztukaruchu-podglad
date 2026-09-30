@@ -25,14 +25,43 @@ document.querySelectorAll('[data-opinie]').forEach(b => b.addEventListener('clic
 }));
 
 // Wydarzenia: filtr rodzaju (Koncert, Warsztat…)
-document.querySelectorAll('.filtr').forEach(b => b.addEventListener('click', () => {
-  document.querySelectorAll('.filtr').forEach(x => x.classList.toggle('aktywny', x === b));
+document.querySelectorAll('.w-nadchodzace .filtr').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('.w-nadchodzace .filtr').forEach(x => x.classList.toggle('aktywny', x === b));
   const f = b.dataset.filtr;
   document.querySelectorAll('.w-nadchodzace .wyr, .w-nadchodzace .kw').forEach(k => {
     const r = k.dataset.rodzaj ?? k.querySelector('[data-rodzaj]')?.dataset.rodzaj ?? '';
     k.hidden = !!f && r !== f;
   });
 }));
+
+// Zajęcia: filtr rodzaju i poziomu (można łączyć, np. „Body & Mind” + „Łagodne”)
+const katalog = document.querySelector('.katalog');
+if (katalog) {
+  const stan = { kategoria: '', poziom: '' };
+  const odswiez = () => {
+    let ile = 0;
+    katalog.querySelectorAll('.kz').forEach(k => {
+      const ok = (!stan.kategoria || k.dataset.kategoria === stan.kategoria)
+        && (!stan.poziom || (stan.poziom === 'start' ? k.dataset.start === '1' : k.dataset.poziom === stan.poziom));
+      k.hidden = !ok; if (ok) ile++;
+    });
+    katalog.querySelector('.katalog__pusto').hidden = ile > 0;
+  };
+  katalog.querySelectorAll('.filtry').forEach(grupa => grupa.querySelectorAll('.filtr').forEach(b => b.addEventListener('click', () => {
+    const g = grupa.dataset.grupa, w = b.dataset.wartosc;
+    const wylacz = g === 'poziom' && stan.poziom === w;   // drugi klik w poziom wyłącza filtr
+    stan[g] = wylacz ? '' : w;
+    grupa.querySelectorAll('.filtr').forEach(x => x.classList.toggle('aktywny', !wylacz && x === b));
+    odswiez();
+  })));
+  // klik w nazwę zajęć w planie tygodnia: pokaż kartę (nawet gdy była odfiltrowana) i ją podświetl
+  document.querySelectorAll('[data-pokaz]').forEach(a => a.addEventListener('click', () => {
+    const k = document.getElementById(a.dataset.pokaz);
+    if (!k) return;
+    if (k.hidden) { stan.kategoria = ''; stan.poziom = ''; katalog.querySelectorAll('.filtr').forEach(x => x.classList.toggle('aktywny', x.dataset.wartosc === '' && x.closest('[data-grupa=kategoria]'))); odswiez(); }
+    k.classList.add('podswietl'); setTimeout(() => k.classList.remove('podswietl'), 2200);
+  }));
+}
 
 // „Pokaż więcej” — długie listy pokazują na start tylko kilka pozycji
 document.querySelectorAll('.pokaz-wiecej').forEach(lista => {

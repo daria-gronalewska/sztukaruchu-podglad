@@ -659,6 +659,103 @@ h6, .nadtytul {
   .wydarzenia-siatka { grid-template-columns: 1fr; }
 }
 
+/* Strona Zajęcia — katalog zajęć, plan tygodnia, pomoc w wyborze */
+
+.katalog__naglowek { max-width: 720px; margin-bottom: 30px; }
+.katalog__naglowek h2 { margin-bottom: 12px; }
+.katalog__filtry { display: grid; gap: 10px; margin-bottom: 36px; }
+.filtry--drugie { gap: 8px; }
+.filtr--jasny { background: transparent; border-color: rgba(20, 9, 30, .12); font-size: 13px; padding: 8px 14px; }
+.filtr--jasny.aktywny { background: var(--szalwia); border-color: var(--szalwia); color: var(--bialy); }
+
+.katalog__siatka { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: start; }
+.katalog__pusto { margin-top: 20px; }
+
+.kz {
+  background: var(--bialy); border-radius: 14px; padding: 26px 26px 24px;
+  display: flex; flex-direction: column; gap: 14px;
+  border: 1px solid rgba(20, 9, 30, .06); transition: box-shadow .25s, border-color .25s;
+  scroll-margin-top: 30px;
+}
+.kz:hover { box-shadow: 0 16px 34px -18px rgba(20, 9, 30, .28); }
+.kz[hidden] { display: none; }
+.kz.podswietl { border-color: var(--fiolet); box-shadow: 0 0 0 3px rgba(165, 138, 231, .25); }
+.kz__gora { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+.kz__kategoria { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--szalwia); }
+.kz__start { font-size: 11px; font-weight: 600; background: var(--mieta); color: #4f6b4b; padding: 4px 10px; border-radius: 50px; }
+.kz__nazwa { font-size: 26px; line-height: 1.1; margin: -4px 0 0; }
+.kz__dla { font-size: 14px; line-height: 1.55; margin: 0; color: var(--tekst); }
+.kz__meta { display: flex; align-items: center; gap: 8px 18px; flex-wrap: wrap; font-size: 13px; color: var(--ciemny); }
+.kz__czas::before { content: '⏱ '; }
+.intensywnosc { display: inline-flex; align-items: center; gap: 8px; }
+.intensywnosc__kropki { display: inline-flex; gap: 3px; }
+.intensywnosc__kropki i { width: 9px; height: 9px; border-radius: 50%; background: var(--krem); }
+.intensywnosc__kropki i.pelna { background: var(--fiolet); }
+
+.kz__kiedy { display: grid; grid-template-columns: 52px 1fr; gap: 8px; align-items: baseline; padding-top: 12px; border-top: 1px solid var(--krem); }
+.kz__etykieta { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--szalwia); }
+.kz__terminy { display: flex; flex-wrap: wrap; gap: 6px; }
+.termin { font-size: 13px; background: var(--tlo); border-radius: 6px; padding: 3px 8px; color: var(--ciemny); }
+.termin b { font-weight: 600; }
+.kz__brak { font-size: 13px; }
+.kz__prowadzi { display: flex; flex-wrap: wrap; gap: 8px 14px; }
+.osoba-mini { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--ciemny); font-weight: 500; }
+.osoba-mini img { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; }
+
+.kz__wiecej summary { cursor: pointer; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--ciemny); list-style: none; display: inline-flex; gap: 6px; }
+.kz__wiecej summary::-webkit-details-marker { display: none; }
+.kz__wiecej summary::after { content: '+'; color: var(--fiolet); font-size: 16px; line-height: 1; }
+.kz__wiecej[open] summary::after { content: '−'; }
+.kz__wiecej > p, .kz__wiecej > ul { font-size: 14px; line-height: 1.6; margin: 12px 0 0; }
+.kz__podtytul { font-weight: 600; color: var(--ciemny); }
+.kz__korzysci { list-style: none; padding: 0; }
+.kz__korzysci li { position: relative; padding-left: 22px; margin-bottom: 4px; }
+.kz__korzysci li::before { content: '✓'; position: absolute; left: 0; color: var(--szalwia); font-weight: 700; }
+.kz__wazne { background: var(--tlo); border-left: 3px solid var(--fiolet); padding: 10px 12px; border-radius: 0 8px 8px 0; }
+.kz__przyciski { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: auto; padding-top: 4px; }
+.kz__przyciski .btn { padding: 12px 26px; }
+.kz__link { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--ciemny); }
+.kz__link:hover { color: var(--fiolet); }
+
+/* plan tygodnia */
+.plan__dni { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; align-items: start; }
+.plan__dzien { background: var(--bialy); border-radius: 14px; padding: 20px 20px 10px; }
+.plan__data { font-size: 22px; margin: 0 0 8px; }
+.plan__lista { list-style: none; margin: 0; padding: 0; }
+.plan__zajecia { display: grid; grid-template-columns: 96px minmax(0, 1fr) auto; gap: 10px; align-items: baseline; padding: 10px 0; border-top: 1px solid var(--krem); font-size: 14px; }
+.plan__zajecia:first-child { border-top: 0; }
+.plan__godz { font-variant-numeric: tabular-nums; color: var(--ciemny); font-weight: 600; font-size: 13px; }
+.plan__nazwa { line-height: 1.35; color: var(--ciemny); font-weight: 500; }
+.plan__nazwa a { color: var(--ciemny); }
+.plan__nazwa a:hover { color: var(--fiolet); }
+.plan__nazwa small { display: block; font-size: 12px; color: var(--tekst); font-weight: 400; }
+.plan__nazwa em { color: var(--terakota); font-style: normal; }
+.plan__miejsca { font-size: 11px; font-weight: 600; white-space: nowrap; background: var(--mieta); color: #4f6b4b; padding: 3px 8px; border-radius: 50px; }
+.plan__miejsca--malo { background: #f6e3d6; color: #9a5a38; }
+.plan__miejsca--brak { background: var(--krem); color: #8a8a8a; }
+.plan__przypis { font-size: 13px; margin-top: 24px; }
+
+/* pomoc w wyborze */
+.pomoc__wnetrze { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 50px; align-items: center; }
+.pomoc__podpowiedzi { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.pomoc__podpowiedzi li { background: var(--bialy); border-radius: 12px; padding: 16px 20px; font-size: 14px; line-height: 1.55; }
+.pomoc__podpowiedzi b { display: block; color: var(--ciemny); font-size: 15px; margin-bottom: 2px; }
+
+@media (max-width: 1100px) {
+  .katalog__siatka { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 767px) {
+  .plan__dni { grid-template-columns: 1fr; }
+  .katalog__siatka { grid-template-columns: 1fr; gap: 16px; }
+  .kz { padding: 22px 20px 20px; }
+  .kz__nazwa { font-size: 24px; }
+  .filtry { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; scrollbar-width: none; }
+  .filtry .filtr { flex-shrink: 0; }
+  .plan__zajecia { grid-template-columns: 82px 1fr; }
+  .plan__miejsca { grid-column: 2; justify-self: start; }
+  .pomoc__wnetrze { grid-template-columns: 1fr; gap: 30px; }
+}
+
 /* Style stron: O nas, Instruktorzy, Cennik, Gabinet */
 
 /* odstępy sekcji (góra/dół) jak w oryginale */
