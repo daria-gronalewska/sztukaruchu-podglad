@@ -49,8 +49,12 @@ def popraw(h):
     h = re.sub(r'(href=")(/[^"]*)(")', link, h)
     return h.replace('action="/kontakt/wyslij.php"', 'action="#"')
 
+bledy = []
 for adres, nazwa in strony.items():
-    open(f'{OUT}/{nazwa}.html', 'w').write(popraw(urllib.request.urlopen(ADRES + adres).read().decode()))
+    html = urllib.request.urlopen(ADRES + adres).read().decode()
+    if re.search(r'<b>(Fatal error|Warning|Parse error)</b>', html): bledy.append('/' + adres)
+    open(f'{OUT}/{nazwa}.html', 'w').write(popraw(html))
+if bledy: print('UWAGA – błąd PHP na stronach:', ', '.join(bledy))
 brak = []
 for m in media:
     if os.path.isfile(P + m):
