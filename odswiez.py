@@ -21,7 +21,7 @@ pliki_css = ['styl.css'] + sorted(x for x in os.listdir(P + '/assets/css') if x.
 css = ''.join(open(f'{P}/assets/css/{f}').read() + '\n' for f in pliki_css)
 media = set('/' + m for m in re.findall(r"url\('?\.\./\.\./(media/[^')]+)", css))
 css = css.replace('../../media/', '../media/')
-css += '\n.podglad-pasek{position:fixed;left:0;right:0;bottom:0;z-index:200;background:#14091e;color:#ece5d6;font:500 13px/1.4 Montserrat,sans-serif;text-align:center;padding:8px 16px}\nbody{padding-bottom:40px}\n'
+css += '\n.podglad-pasek{position:fixed;left:0;right:0;bottom:0;z-index:200;background:#14091e;color:#ece5d6;font:500 13px/1.4 Montserrat,sans-serif;text-align:center;padding:8px 16px}\nbody{padding-bottom:40px}\n@media(max-width:767px){.podglad-pasek{font-size:11px;padding:5px 12px}.pasek-mobilny{bottom:26px}body{padding-bottom:110px}}\n'
 os.makedirs(OUT + '/assets', exist_ok=True)
 open(OUT + '/assets/styl.css', 'w').write(css)
 js = open(P + '/assets/js/main.js').read()

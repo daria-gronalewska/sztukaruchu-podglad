@@ -464,29 +464,44 @@ h6, .nadtytul {
   .naglowek__cta { width: auto; }
 }
 
-/* pasek „Dziś w ART” pod banerem strony głównej */
-.dzis { background: var(--ciemny); color: var(--krem); padding: 18px 40px; }
-.dzis__wnetrze { max-width: var(--szer); margin: 0 auto; display: flex; align-items: center; gap: 16px 28px; }
-.dzis__tytul { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
-.dzis h2 { color: var(--bialy); font-size: 22px; margin: 0; white-space: nowrap; }
-.dzis__kropka { width: 9px; height: 9px; border-radius: 50%; background: #8fd18a; box-shadow: 0 0 0 4px rgba(143, 209, 138, .2); }
-.dzis__lista { list-style: none; margin: 0; padding: 0 0 2px; display: flex; gap: 10px; overflow-x: auto; flex: 1; scrollbar-width: none; -webkit-mask-image: linear-gradient(90deg, #000 88%, transparent); mask-image: linear-gradient(90deg, #000 88%, transparent); }
-.dzis__lista::-webkit-scrollbar { display: none; }
-.dzis__zajecia { display: flex; align-items: baseline; gap: 8px; white-space: nowrap; background: rgba(255, 255, 255, .08); border-radius: 50px; padding: 8px 14px; color: var(--krem); font-size: 14px; transition: background .2s; }
-.dzis__zajecia:hover { background: rgba(255, 255, 255, .16); color: var(--bialy); }
-.dzis__godz { font-weight: 700; font-variant-numeric: tabular-nums; color: var(--bialy); }
-.dzis__miejsca { font-size: 11px; color: #a9d8a5; }
-.dzis__miejsca--brak { color: rgba(236, 229, 214, .55); }
-.dzis__wiecej { color: var(--lila); font-size: 14px; font-weight: 600; white-space: nowrap; }
-.dzis__wiecej:hover { color: var(--bialy); }
+/* „Dziś w ART” — jasna karta wchodząca na dół banera strony głównej */
+.dzis { position: relative; z-index: 2; padding: 0 40px; margin-top: -90px; }
+.dzis__karta {
+  max-width: var(--szer); margin: 0 auto; background: var(--bialy); border-radius: 16px;
+  box-shadow: 0 24px 50px -24px rgba(20, 9, 30, .35);
+  display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 28px; align-items: center; padding: 28px 30px;
+}
+.dzis__naglowek .nadtytul { margin-bottom: 6px; font-size: 13px; }
+.dzis__naglowek h2 { font-size: 36px; margin: 0 0 12px; }
+.dzis__wiecej { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--fiolet); }
+.dzis__wiecej:hover { color: var(--szalwia); }
+.dzis__lista {
+  list-style: none; margin: 0; padding: 4px 2px 6px; display: grid; grid-auto-flow: column; grid-auto-columns: minmax(200px, 1fr);
+  gap: 14px; overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: thin;
+}
+.dzis__zajecia { scroll-snap-align: start; }
+.dzis__zajecia a {
+  height: 100%; display: flex; flex-direction: column; gap: 6px; padding: 16px 18px;
+  border-radius: 12px; background: var(--tlo); color: var(--tekst); transition: background .2s, transform .2s;
+}
+.dzis__zajecia a:hover { background: var(--krem); transform: translateY(-2px); }
+.dzis__godz { font: 700 26px/1 var(--font-naglowki); color: var(--fiolet); font-variant-numeric: tabular-nums; }
+.dzis__nazwa { font: 600 18px/1.15 var(--font-naglowki); color: var(--ciemny); }
+.dzis__osoba { display: flex; align-items: center; gap: 7px; font-size: 12px; margin-top: auto; padding-top: 4px; }
+.dzis__osoba img { width: 22px; height: 22px; border-radius: 50%; object-fit: cover; }
+.dzis__miejsca { align-self: flex-start; font-size: 11px; font-weight: 600; background: var(--mieta); color: #4f6b4b; padding: 3px 9px; border-radius: 50px; }
+.dzis__miejsca--malo { background: #f6e3d6; color: #9a5a38; }
+.dzis__miejsca--brak { background: var(--krem); color: #8a8a8a; }
+.dzis + .sekcja--atuty { padding-top: 70px; }
 
 /* stały pasek „Zapisz się” na telefonie */
 .pasek-mobilny { display: none; }
 @media (max-width: 767px) {
-  .dzis { padding: 16px; }
-  .dzis__wnetrze { flex-wrap: wrap; }
-  .dzis__lista { order: 3; flex-basis: 100%; }
-  .dzis__wiecej { margin-left: auto; }
+  .dzis { padding: 0 16px; margin-top: -40px; }
+  .dzis__karta { grid-template-columns: 1fr; gap: 16px; padding: 22px 18px; }
+  .dzis__naglowek h2 { font-size: 30px; margin-bottom: 6px; }
+  .dzis__lista { grid-auto-columns: 72%; margin: 0 -18px; padding: 4px 18px 8px; }
+  .dzis + .sekcja--atuty { padding-top: 50px; }
   .pasek-mobilny {
     display: flex; gap: 10px; align-items: center;
     position: fixed; left: 0; right: 0; bottom: 0; z-index: 90;
@@ -1408,3 +1423,4 @@ h2.st-wycentrowany { margin-bottom: 0; }
 
 .podglad-pasek{position:fixed;left:0;right:0;bottom:0;z-index:200;background:#14091e;color:#ece5d6;font:500 13px/1.4 Montserrat,sans-serif;text-align:center;padding:8px 16px}
 body{padding-bottom:40px}
+@media(max-width:767px){.podglad-pasek{font-size:11px;padding:5px 12px}.pasek-mobilny{bottom:26px}body{padding-bottom:110px}}
