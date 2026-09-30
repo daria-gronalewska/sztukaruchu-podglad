@@ -813,6 +813,10 @@ h6, .nadtytul { font-size: 15px; letter-spacing: 2.5px; }
 }
 @media (max-width: 900px) { .gb-hero__foto img { aspect-ratio: 4 / 3; } .gb-kto__foto img { aspect-ratio: 1 / 1; } }
 
+.gb-filmy { margin-top: 70px; }
+.gb-filmy h3 { font-size: 26px; margin: 0 0 24px; }
+.gb-faq .zj-rozwin ul { margin: 0 0 12px; padding-left: 20px; }
+
 /* ---------- zdjęcia ---------- */
 .galeria__filtry { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 36px; }
 .galeria__siatka { columns: 3 280px; column-gap: 14px; }
