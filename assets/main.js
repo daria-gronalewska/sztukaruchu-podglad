@@ -87,6 +87,12 @@ if (pasek) {
   addEventListener('scroll', sprawdz, { passive: true }); sprawdz();
 }
 
+// Strona główna: strzałki paska zespołu
+document.querySelectorAll('[data-przewin]').forEach(b => b.addEventListener('click', () => {
+  const r = document.getElementById('zespol-pasek');
+  r.scrollBy({ left: r.clientWidth * +b.dataset.przewin, behavior: 'smooth' });
+}));
+
 // Łagodne pojawianie się sekcji
 const pojaw = document.querySelectorAll('.pojaw');
 if ('IntersectionObserver' in window) {

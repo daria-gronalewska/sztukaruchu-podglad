@@ -408,24 +408,6 @@ h6, .nadtytul {
 .sekcja--atuty { padding: 93px 40px 68px; }
 .atut h4 { margin-bottom: 12px; }
 .dwie img.foto-waska { max-width: 409px; margin: 0 auto; }
-.gl-pas { padding: 0 40px; }
-.gl-pas--tytul { padding-top: 80px; }
-.gl-pas--tytul h2 { margin: 0; }
-.gl-pas--zajecia { padding-top: 120px; padding-bottom: 50px; }
-.gl-pas--kategorie { padding-top: 24px; padding-bottom: 10px; }
-.gl-pas--tagi { padding-top: 30px; padding-bottom: 50px; }
-.gl-pas--tagi .tagi { margin-top: 0; }
-.gl-pas--grafik { padding-top: 10px; padding-bottom: 90px; }
-.gl-pas--grafik .przyciski { margin-top: 0; }
-.gl-zespol { padding: 20px 10px 40px; }
-.gl-zespol > .dwie { padding: 0 10px; }
-.zespol-wiersz { gap: 20px; padding: 10px; margin-top: 37px; }
-.zespol-wiersz + .zespol-wiersz { margin-top: 0; }
-.gl-zespol .osoba { padding: 24px; }
-.gl-zespol .siatka--3 .osoba { min-height: 524px; }
-.gl-zespol .siatka--4 .osoba { min-height: 477px; }
-.gl-zespol .osoba img { border-radius: 0; margin-bottom: 32px; }
-.gl-zespol .przyciski { margin-top: 50px; }
 .gl-wydarzenia { padding: 90px 40px 82px; }
 .gl-wydarzenia__siatka { margin-top: 70px; }
 .gl-wydarzenia .karta__img img { aspect-ratio: auto; }
@@ -451,15 +433,12 @@ h6, .nadtytul {
 @media (max-width: 1100px) { .opinia { flex-basis: calc((100% - 20px) / 2); } }
 @media (max-width: 767px) {
   .hero--glowna { background-size: cover; padding-top: 130px; }
-  .gl-zespol .osoba { min-height: 0 !important; }
   .opinia { flex-basis: 85%; }
-  .gl-pas, .gl-wydarzenia, .gl-opinie, .gl-faq { padding-left: 16px; padding-right: 16px; }
-  .gl-pas--tytul { padding-top: 60px; } .gl-pas--zajecia { padding-top: 40px; }
+  .gl-wydarzenia, .gl-opinie, .gl-faq { padding-left: 16px; padding-right: 16px; }
   .gl-wydarzenia { padding-top: 60px; padding-bottom: 60px; } .gl-wydarzenia__siatka { margin-top: 30px; }
   .gl-opinie, .gl-faq { padding-top: 60px; padding-bottom: 60px; }
   .gl-aktualnosci .dwie--tekst > :first-child { padding-right: 0; }
   .gl-aktualnosci .lista { grid-template-columns: 1fr; margin-bottom: 40px; }
-  .gl-zespol { padding: 20px 6px 40px; }
   .dwie img.foto-waska { max-width: 100%; }
   .naglowek__cta { width: auto; }
 }
@@ -515,6 +494,56 @@ h6, .nadtytul {
   .menu-otwarte .pasek-mobilny, .pasek-mobilny.ukryty { transform: translateY(110%); }
   body { padding-bottom: 76px; }
   .zgoda { bottom: 86px; }
+}
+
+/* strona główna: obszary ruchu */
+.gl-zajecia .obszary { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; margin-top: 50px; }
+.obszar { background: var(--bialy); border-radius: 16px; padding: 28px 24px; display: flex; flex-direction: column; gap: 10px; }
+.obszar__ikona { width: 56px; height: 56px; }
+.obszar h3 { font-size: 26px; margin: 4px 0 0; }
+.obszar p { font-size: 14px; line-height: 1.6; margin: 0; }
+.obszar__zajecia { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.obszar__zajecia a { font-size: 13px; background: var(--tlo); color: var(--ciemny); border-radius: 50px; padding: 5px 12px; transition: background .2s, color .2s; }
+.obszar__zajecia a:hover { background: var(--fiolet); color: var(--bialy); }
+
+/* strona główna: zespół w pasku przewijanym w bok */
+.gl-zespol .dwie { margin-bottom: 40px; }
+.zespol-pasek { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 72px) / 4); gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 4px 16px; scrollbar-width: thin; }
+.czlonek { scroll-snap-align: start; background: var(--bialy); border-radius: 16px; padding: 18px 18px 20px; display: flex; flex-direction: column; gap: 10px; }
+.czlonek__profil { color: var(--ciemny); display: block; }
+.czlonek__profil img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 12px; margin-bottom: 14px; transition: transform .4s; }
+.czlonek__profil:hover img { transform: scale(1.02); }
+.czlonek__profil h6 { color: var(--ciemny); margin: 0; font-size: 16px; }
+.czlonek__profil:hover h6 { color: var(--fiolet); }
+.czlonek p { font-size: 14px; line-height: 1.55; margin: 0; }
+.czlonek__tagi { display: flex; flex-wrap: wrap; gap: 5px; }
+.czlonek__tagi span { font-size: 12px; font-weight: 600; background: var(--tlo); color: var(--ciemny); border-radius: 8px; padding: 3px 9px; }
+.czlonek__grafik { margin-top: auto; padding-top: 4px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--ciemny); }
+.czlonek__grafik:hover { color: var(--fiolet); }
+.zespol-nawigacja { display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 20px; }
+.zespol-nawigacja button { width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--fiolet); background: transparent; color: var(--fiolet); font-size: 20px; cursor: pointer; }
+.zespol-nawigacja button:hover { background: var(--fiolet); color: var(--bialy); }
+.zespol-nawigacja .btn { margin-left: 12px; }
+
+/* „U nas poczujesz się jak u siebie” */
+.gl-jak-u-siebie { padding: 80px 40px; }
+.gl-jak-u-siebie__wnetrze { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 50px; align-items: center; }
+.gl-jak-u-siebie h2 { color: var(--bialy); font-size: 44px; margin: 0; }
+.gl-jak-u-siebie h2 span { color: var(--krem); font-style: italic; }
+.gl-jak-u-siebie p { color: var(--bialy); font-size: 17px; line-height: 1.7; margin: 0; }
+
+@media (max-width: 1100px) {
+  .gl-zajecia .obszary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .zespol-pasek { grid-auto-columns: calc((100% - 48px) / 3); }
+}
+@media (max-width: 767px) {
+  .gl-zajecia .obszary { grid-template-columns: 1fr; margin-top: 30px; }
+  .zespol-pasek { grid-auto-columns: 78%; gap: 14px; }
+  .gl-jak-u-siebie { padding: 56px 16px; }
+  .gl-jak-u-siebie__wnetrze { grid-template-columns: 1fr; gap: 16px; }
+  .gl-jak-u-siebie h2 { font-size: 34px; }
+  .zespol-nawigacja button { display: none; }
+  .zespol-nawigacja .btn { margin-left: 0; }
 }
 
 /* ART Sztuka Ruchu — style stron: kontakt, filmy, grafik zajęć, otwarcie, zapisz się,
@@ -1077,6 +1106,48 @@ h2.st-wycentrowany { margin-bottom: 0; }
 .st-onas .sekcja .dwie.st-gora { align-items: center; }
 .st-onas .sekcja .st-kreska-gora { margin: 15px 0 14px; }
 .st-hero-gora { align-items: flex-start; }
+
+/* Zespół (odświeżona strona): pasek ze zdjęciami i profile */
+.zespol-nav { position: sticky; top: 0; z-index: 20; background: rgba(246, 246, 240, .95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--krem); padding: 14px 40px; }
+.zespol-nav__lista { max-width: var(--szer); margin: 0 auto; display: flex; gap: 18px; overflow-x: auto; scrollbar-width: none; }
+.zespol-nav__lista::-webkit-scrollbar { display: none; }
+.zespol-nav a { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: var(--ciemny); }
+.zespol-nav img { width: 54px; height: 54px; border-radius: 50%; object-fit: cover; border: 2px solid transparent; transition: border-color .2s; }
+.zespol-nav a:hover img { border-color: var(--fiolet); }
+.profile .kontener { display: grid; gap: 40px; }
+.profil { display: grid; grid-template-columns: 380px minmax(0, 1fr); gap: 50px; align-items: start; background: var(--bialy); border-radius: 18px; padding: 36px; scroll-margin-top: 110px; }
+.profil:target { box-shadow: 0 0 0 3px rgba(165, 138, 231, .35); }
+.profil__zdjecie img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 14px; box-shadow: 0 20px 40px -18px rgba(20, 9, 30, .35); }
+.profil__tresc { display: flex; flex-direction: column; gap: 16px; }
+.profil h2 { font-size: 40px; margin: 0; }
+.profil__zdanie { font: 500 21px/1.35 var(--font-naglowki); color: var(--ciemny); margin: 0; }
+.profil__etykieta { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--szalwia); margin: 0 0 8px; }
+.profil__zajecia ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.profil__zajecia li { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; font-size: 15px; }
+.profil__zajecia a { font-weight: 600; color: var(--ciemny); }
+.profil__zajecia a:hover { color: var(--fiolet); }
+.profil__zajecia span { font-size: 13px; color: var(--tekst); }
+.profil__najblizsze { display: flex; flex-direction: column; gap: 6px; }
+.profil__termin { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; background: var(--tlo); border-radius: 10px; padding: 10px 14px; color: var(--ciemny); font-size: 14px; }
+.profil__termin:hover { background: var(--krem); color: var(--ciemny); }
+.profil__termin span { margin-left: auto; font-size: 11px; font-weight: 600; background: var(--mieta); color: #4f6b4b; padding: 3px 9px; border-radius: 50px; }
+.profil__termin span.malo { background: #f6e3d6; color: #9a5a38; }
+.profil__termin span.brak { background: var(--krem); color: #8a8a8a; }
+.profil__wiecej summary { cursor: pointer; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--ciemny); list-style: none; display: inline-flex; gap: 6px; }
+.profil__wiecej summary::-webkit-details-marker { display: none; }
+.profil__wiecej summary::after { content: '+'; color: var(--fiolet); font-size: 16px; line-height: 1; }
+.profil__wiecej[open] summary::after { content: '−'; }
+.profil__bio { font-size: 15px; line-height: 1.75; margin: 12px 0 16px; }
+.profil__bio ul { padding-left: 20px; }
+.profil .przyciski { margin-top: 4px; }
+@media (max-width: 1100px) { .profil { grid-template-columns: 280px minmax(0, 1fr); gap: 32px; padding: 28px; } }
+@media (max-width: 767px) {
+  .zespol-nav { padding: 10px 16px; }
+  .zespol-nav img { width: 46px; height: 46px; }
+  .profil { grid-template-columns: 1fr; padding: 20px; gap: 20px; }
+  .profil__zdjecie img { aspect-ratio: 1; }
+  .profil h2 { font-size: 32px; }
+}
 
 /* Wydarzenia i aktualności — listy, karty, strona wpisu */
 
