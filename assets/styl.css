@@ -2046,6 +2046,12 @@ h2.st-wycentrowany { margin-bottom: 0; }
   .zp__zrzuty img { height: 280px; }
 }
 
+/* Aplikacja eFitness */
+.zp__aplikacja { margin-top: 18px; background: var(--mieta); border-radius: 8px; padding: 16px 18px; }
+.zp__aplikacja p { margin: 0 !important; }
+.zp__aplikacja .przyciski { margin-top: 12px !important; }
+.zp__aplikacja .btn { padding: 11px 20px; font-size: 14px; }
+
 
 .podglad-pasek{position:fixed;left:0;right:0;bottom:0;z-index:200;background:#14091e;color:#ece5d6;font:500 13px/1.4 Montserrat,sans-serif;text-align:center;padding:8px 16px}
 body{padding-bottom:40px}
