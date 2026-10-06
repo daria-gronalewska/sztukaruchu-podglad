@@ -2046,11 +2046,23 @@ h2.st-wycentrowany { margin-bottom: 0; }
   .zp__zrzuty img { height: 280px; }
 }
 
-/* Aplikacja eFitness */
-.zp__aplikacja { margin-top: 18px; background: var(--mieta); border-radius: 8px; padding: 16px 18px; }
-.zp__aplikacja p { margin: 0 !important; }
-.zp__aplikacja .przyciski { margin-top: 12px !important; }
-.zp__aplikacja .btn { padding: 11px 20px; font-size: 14px; }
+/* Aplikacja eFitness – wyraźny blok między krokami */
+.zp__aplikacja { max-width: 820px; margin: 18px 0; display: grid; grid-template-columns: 84px 1fr; gap: 24px; align-items: center; background: var(--ciemny); color: var(--bialy); border-radius: var(--radius); padding: 28px 30px; scroll-margin-top: 90px; }
+.zp__aplikacja-ikona { width: 84px; height: 84px; border-radius: 20px; }
+.zp__aplikacja h2 { color: var(--bialy); font-size: 26px; margin: 0 0 8px; }
+.zp__aplikacja p { margin: 0; font-size: 15px; color: rgba(255, 255, 255, .85); }
+.zp__aplikacja .przyciski { margin-top: 16px; }
+.zp__aplikacja .btn--jasny { background: var(--bialy); border-color: var(--bialy); color: var(--ciemny); padding: 12px 22px; font-size: 14px; font-weight: 600; }
+.zp__aplikacja .btn--jasny:hover { background: var(--fiolet); border-color: var(--fiolet); color: var(--bialy); }
+.zp__skrot img { width: 22px; height: 22px; border-radius: 6px; vertical-align: middle; margin-right: 4px; }
+.zp__skrot + .zp__skrot { margin-top: 8px !important; }
+@media (max-width: 767px) {
+  .zp__aplikacja { grid-template-columns: 1fr; gap: 14px; padding: 24px 20px; text-align: left; }
+  .zp__aplikacja-ikona { width: 64px; height: 64px; border-radius: 16px; }
+  .zp__aplikacja .btn--jasny { width: 100%; }
+}
+.zp__aplikacja .zp__aplikacja-krok { margin-top: 10px; color: var(--bialy); }
+.zp__aplikacja-krok b { color: var(--lila); }
 
 
 .podglad-pasek{position:fixed;left:0;right:0;bottom:0;z-index:200;background:#14091e;color:#ece5d6;font:500 13px/1.4 Montserrat,sans-serif;text-align:center;padding:8px 16px}
