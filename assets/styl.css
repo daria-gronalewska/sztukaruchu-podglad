@@ -246,7 +246,9 @@ h6, .nadtytul {
 .opinia__tekst { font-size: 14px; line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; overflow: hidden; }
 .opinia__tekst.otwarta { -webkit-line-clamp: unset; }
 .opinia__wiecej { background: none; border: 0; padding: 0; color: var(--fiolet); cursor: pointer; font: inherit; font-size: 13px; margin-top: 6px; }
-.opinie__podsumowanie { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 10px; font-size: 15px; }
+.opinie__podsumowanie { text-align: center; margin-top: 14px; font-size: 15px; }
+.opinie__podsumowanie p { margin: 0; }
+.opinie__podsumowanie .przyciski { margin-top: 18px; }
 
 /* sekcja CTA „Zapisz się na zajęcia” */
 .cta-zapisy { position: relative; background: var(--grafit); padding: 144px 40px 155px; text-align: center; color: var(--bialy); overflow: hidden; }
@@ -681,6 +683,27 @@ h6, .nadtytul { font-size: 15px; letter-spacing: 2.5px; }
 .cn-jak b { color: var(--ciemny); }
 .cn-jak p { margin: 0; font-size: 13px; }
 @media (max-width: 767px) { .cn-jak { padding: 30px 16px 0; } .cn-jak .kontener { padding: 20px 18px; } }
+
+/* Strona Filmy: kafelki z miniaturą, film uruchamia się po kliknięciu */
+.filmy__siatka { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; }
+.film { background: var(--bialy); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; }
+.film[hidden] { display: none; }
+.film__odtworz { position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; padding: 0; border: 0; cursor: pointer; background: var(--ciemny); overflow: hidden; }
+.film__odtworz img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s, opacity .3s; }
+.film__odtworz:hover img { transform: scale(1.04); opacity: .9; }
+.film__play { position: absolute; left: 50%; top: 50%; width: 64px; height: 64px; margin: -32px 0 0 -32px; border-radius: 50%; background: rgba(165, 138, 231, .95); box-shadow: 0 8px 24px rgba(20, 9, 30, .35); transition: transform .2s; }
+.film__play::after { content: ''; position: absolute; left: 26px; top: 20px; border-style: solid; border-width: 12px 0 12px 19px; border-color: transparent transparent transparent var(--bialy); }
+.film__odtworz:hover .film__play { transform: scale(1.08); }
+.film__odtworz:focus-visible { outline: 3px solid var(--fiolet); outline-offset: 2px; }
+.film iframe { width: 100%; aspect-ratio: 16 / 9; border: 0; display: block; }
+.film__opis { padding: 18px 20px 22px; }
+.film__rodzaj { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--szalwia); }
+.film h3 { font-size: 19px; line-height: 1.2; margin: 6px 0 6px; }
+.film__osoba { font-size: 13px; margin: 0; color: var(--tekst); }
+.filmy__kanal { margin-top: 44px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px 24px; text-align: center; }
+.filmy__kanal p { margin: 0; }
+@media (max-width: 1100px) { .filmy__siatka { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 767px) { .filmy__siatka { grid-template-columns: 1fr; gap: 18px; } }
 
 /* ---------- gabinet (sesja z biorezonansem) ---------- */
 .gb-hero { background-position: 70% center; }

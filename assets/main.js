@@ -97,6 +97,20 @@ document.querySelectorAll('[data-przewin]').forEach(b => b.addEventListener('cli
   r.scrollBy({ left: r.clientWidth * +b.dataset.przewin, behavior: 'smooth' });
 }));
 
+// Filmy: film ładuje się dopiero po kliknięciu (szybsza strona, bez ciasteczek YouTube przed odtworzeniem)
+document.querySelectorAll('[data-yt]').forEach(b => b.addEventListener('click', () => {
+  const f = document.createElement('iframe');
+  f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.yt + '?autoplay=1&rel=0';
+  f.title = b.getAttribute('aria-label') || 'Film';
+  f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+  f.allowFullscreen = true;
+  b.replaceWith(f);
+}));
+document.querySelectorAll('[data-film]').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('[data-film]').forEach(x => x.classList.toggle('aktywny', x === b));
+  document.querySelectorAll('.film').forEach(f => f.hidden = !!b.dataset.film && f.dataset.rodzaj !== b.dataset.film);
+}));
+
 // Łagodne pojawianie się sekcji
 const pojaw = document.querySelectorAll('.pojaw');
 if ('IntersectionObserver' in window) {
