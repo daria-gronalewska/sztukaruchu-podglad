@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/styl.css?v=1791285429">
+<link rel="stylesheet" href="assets/styl.css?v=1791287957">
 </head>
 <body class="">
 <header class="naglowek">
@@ -65,9 +65,9 @@
           <a href="kontakt.html">Kontakt</a>
                   </li>
             </ul>
-      <a class="btn naglowek__cta naglowek__cta--mobile" href="zajecia.html#plan">Zapisz się</a>
+      <a class="btn naglowek__cta naglowek__cta--mobile" href="zapisz-sie.html">Zapisz się</a>
     </nav>
-    <a class="btn naglowek__cta" href="zajecia.html#plan">Zapisz się</a>
+    <a class="btn naglowek__cta" href="zapisz-sie.html">Zapisz się</a>
     <button class="hamburger" aria-label="Menu" aria-controls="menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
@@ -291,11 +291,22 @@
 
 <div class="pasek-mobilny" aria-label="Szybkie zapisy">
   <a class="pasek-mobilny__grafik" href="cennik.html">Cennik</a>
-  <a class="btn pasek-mobilny__zapisz" href="zajecia.html#plan">Zapisz się na zajęcia</a>
+  <a class="btn pasek-mobilny__zapisz" href="zapisz-sie.html">Zapisz się na zajęcia</a>
 </div>
 
+<dialog class="karnet-pytanie" id="karnet-pytanie" aria-labelledby="karnet-pytanie-tytul">
+  <button class="karnet-pytanie__zamknij" type="button" aria-label="Zamknij" data-zamknij>×</button>
+  <h2 id="karnet-pytanie-tytul">Masz już karnet?</h2>
+  <p>Kliknij kafelek z zajęciami, a potem „Zapisz się”.</p>
+  <div class="przyciski">
+    <a class="btn" href="#" target="_blank" rel="noopener" data-mam-karnet>Mam karnet – zapisuję się</a>
+    <a class="btn btn--kontur" href="https://artsztukaruchu-borkowo.cms.efitness.com.pl/kup-karnet" target="_blank" rel="noopener" data-zamknij>Nie mam – kupuję karnet</a>
+  </div>
+  <a class="karnet-pytanie__jak" href="zapisz-sie.html">Jak działają zapisy?</a>
+</dialog>
 
 
-<script src="assets/main.js?v=1791285429" defer></script>
+
+<script src="assets/main.js?v=1791287957" defer></script>
 <div class="podglad-pasek">Podgląd nowej strony ART Sztuka Ruchu — formularze zadziałają po publikacji</div></body>
 </html>

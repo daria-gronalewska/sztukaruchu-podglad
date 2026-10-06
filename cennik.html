@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/styl.css?v=1791285429">
+<link rel="stylesheet" href="assets/styl.css?v=1791287957">
 </head>
 <body class="">
 <header class="naglowek">
@@ -65,9 +65,9 @@
           <a href="kontakt.html">Kontakt</a>
                   </li>
             </ul>
-      <a class="btn naglowek__cta naglowek__cta--mobile" href="zajecia.html#plan">Zapisz się</a>
+      <a class="btn naglowek__cta naglowek__cta--mobile" href="zapisz-sie.html">Zapisz się</a>
     </nav>
-    <a class="btn naglowek__cta" href="zajecia.html#plan">Zapisz się</a>
+    <a class="btn naglowek__cta" href="zapisz-sie.html">Zapisz się</a>
     <button class="hamburger" aria-label="Menu" aria-controls="menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
@@ -77,7 +77,8 @@
   <div class="hero__karta">
     <h1>Cennik</h1>
     <p>Zacznij od pierwszego wejścia za 40 zł albo tygodnia bez limitu za 111 zł. Gdy poczujesz, że to Twoje miejsce, wybierz karnet dopasowany do tego, jak często chcesz ćwiczyć.</p>
-    <a class="btn " href="https://artsztukaruchu-borkowo.cms.efitness.com.pl/kup-karnet" target="_blank" rel="noopener">Kup karnet</a>  </div>
+    <a class="btn " href="https://artsztukaruchu-borkowo.cms.efitness.com.pl/kup-karnet" target="_blank" rel="noopener">Kup karnet</a>    <p class="przypomnienie">Pamiętaj: karnet to jeszcze nie zapis. Zarezerwuj miejsce na każde zajęcia w <a href="zajecia.html#plan">planie</a>.</p>
+  </div>
 </section>
 
 <nav class="cn-nav" aria-label="Części cennika">
@@ -103,6 +104,7 @@
     <div>
       <div class="cn-karty"><div class="cn-karta cn-karta--polecana"><span class="cn-karta__znak">Nowość</span><h3>Pierwsze 7 dni</h3><p class="cn-karta__cena">111 zł</p><p class="cn-karta__opis">Przez 7 dni chodzisz na zajęcia bez limitu. Oferta jednorazowa dla nowych klubowiczów.</p></div><div class="cn-karta"><h3>Pierwsze wejście</h3><p class="cn-karta__cena">40 zł</p><p class="cn-karta__opis">Jedne dowolne zajęcia, do wykorzystania w ciągu 3 dni. Po zakupie zapisz się na wybrane zajęcia.</p></div></div>      <div class="przyciski">
         <a class="btn " href="https://artsztukaruchu-borkowo.cms.efitness.com.pl/kup-karnet" target="_blank" rel="noopener">Kup karnet na start</a>        <a class="btn btn--kontur" href="zajecia.html#plan">Plan zajęć</a>      </div>
+      <p class="przypomnienie">Pamiętaj: karnet to jeszcze nie zapis. Zarezerwuj miejsce na każde zajęcia w <a href="zajecia.html#plan">planie</a>.</p>
     </div>
   </div>
 </section>
@@ -113,7 +115,8 @@
     <ol>
       <li><b>Kliknij „Kup karnet”</b> i wybierz dzień, od którego karnet ma działać.</li>
       <li><b>Wybierz kategorię</b> – na start „Jestem tu PIERWSZY RAZ!”, a potem „Karnety wejściowe i OPEN”.</li>
-      <li><b>Zaloguj się albo załóż konto</b> (wystarczy e-mail) i zapłać. Potem zapisz się na zajęcia w <a href="zajecia.html#plan">planie tygodnia</a>.</li>
+      <li><b>Zaloguj się albo załóż konto</b> (wystarczy e-mail) i zapłać.</li>
+      <li><b>Zapisz się na zajęcia</b> – karnet to jeszcze nie zapis. W <a href="zajecia.html#plan">planie tygodnia</a> kliknij „zapisz się” przy każdych zajęciach, na które chcesz przyjść.</li>
     </ol>
     <p>Masz już karnet? Rezerwacje i odwołania znajdziesz w <a href="https://artsztukaruchu-borkowo.cms.efitness.com.pl/strefa-klienta" target="_blank" rel="noopener">swoim koncie e-fitness</a>.</p>
   </div>
@@ -265,11 +268,22 @@
 
 <div class="pasek-mobilny" aria-label="Szybkie zapisy">
   <a class="pasek-mobilny__grafik" href="cennik.html">Cennik</a>
-  <a class="btn pasek-mobilny__zapisz" href="zajecia.html#plan">Zapisz się na zajęcia</a>
+  <a class="btn pasek-mobilny__zapisz" href="zapisz-sie.html">Zapisz się na zajęcia</a>
 </div>
 
+<dialog class="karnet-pytanie" id="karnet-pytanie" aria-labelledby="karnet-pytanie-tytul">
+  <button class="karnet-pytanie__zamknij" type="button" aria-label="Zamknij" data-zamknij>×</button>
+  <h2 id="karnet-pytanie-tytul">Masz już karnet?</h2>
+  <p>Kliknij kafelek z zajęciami, a potem „Zapisz się”.</p>
+  <div class="przyciski">
+    <a class="btn" href="#" target="_blank" rel="noopener" data-mam-karnet>Mam karnet – zapisuję się</a>
+    <a class="btn btn--kontur" href="https://artsztukaruchu-borkowo.cms.efitness.com.pl/kup-karnet" target="_blank" rel="noopener" data-zamknij>Nie mam – kupuję karnet</a>
+  </div>
+  <a class="karnet-pytanie__jak" href="zapisz-sie.html">Jak działają zapisy?</a>
+</dialog>
 
 
-<script src="assets/main.js?v=1791285429" defer></script>
+
+<script src="assets/main.js?v=1791287957" defer></script>
 <div class="podglad-pasek">Podgląd nowej strony ART Sztuka Ruchu — formularze zadziałają po publikacji</div></body>
 </html>
