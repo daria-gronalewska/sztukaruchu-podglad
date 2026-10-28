@@ -4,6 +4,24 @@ hamburger?.addEventListener('click', () => {
   const otwarte = document.body.classList.toggle('menu-otwarte');
   hamburger.setAttribute('aria-expanded', otwarte);
 });
+// klik w link w menu zamyka menu (ważne przy linkach na tej samej stronie, np. „Plan zajęć” na /zajecia/)
+document.querySelectorAll('#menu a').forEach(a => a.addEventListener('click', () => {
+  document.body.classList.remove('menu-otwarte');
+  hamburger?.setAttribute('aria-expanded', false);
+}));
+
+// Kotwica w adresie (np. /zajecia/#plan): przeglądarka skacze tam od razu, zanim wczytają się
+// czcionki i zdjęcia – potem treść nad planem rośnie i plan „ucieka”. Po wczytaniu poprawiamy pozycję,
+// chyba że ktoś w międzyczasie sam przewinął stronę.
+if (location.hash.length > 1) {
+  let ruszal = false;
+  ['touchstart', 'wheel', 'keydown'].forEach(z => addEventListener(z, () => { ruszal = true; }, { once: true, passive: true }));
+  const cel = () => { try { return document.querySelector(decodeURIComponent(location.hash)); } catch { return null; } };
+  const popraw = () => { if (!ruszal) cel()?.scrollIntoView({ block: 'start', behavior: 'instant' }); };
+  const zaladowane = document.readyState === 'complete' ? Promise.resolve() : new Promise(r => addEventListener('load', r, { once: true }));
+  Promise.all([zaladowane, document.fonts ? document.fonts.ready : null]).then(() => { popraw(); setTimeout(popraw, 400); });
+}
+
 document.querySelectorAll('.menu__rozwin').forEach(b => b.addEventListener('click', () => {
   const li = b.closest('li');
   b.setAttribute('aria-expanded', li.classList.toggle('otwarte'));

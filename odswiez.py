@@ -2,7 +2,7 @@
 # Użycie: python3 odswiez.py  → potem wysłać zmiany na GitHub (strona publikuje się sama).
 import re, os, shutil, urllib.request, json, time
 WERSJA = str(int(time.time()))  # numer wersji — przeglądarka nie użyje starych stylów z pamięci
-P = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'sztukaruchu-art')
+P = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '1 Strona internetowa (sztukaruchu.pl)')
 OUT = os.path.dirname(os.path.abspath(__file__))
 ADRES = os.environ.get('ADRES', 'http://localhost:8090/')
 
